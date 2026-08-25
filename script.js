@@ -1,47 +1,40 @@
 /* =====================================================
    SUNAMITA WELLNESS
-   MAIN SCRIPT
-   ===================================================== */
+   COMPLETE WEBSITE SCRIPT
+===================================================== */
 
 
 /* =====================================================
    WHATSAPP
-   ===================================================== */
-
-/*
-   IMPORTANTE:
-   Cambia este número por el WhatsApp REAL de Susan.
-
-   Ejemplo:
-   +31 6 12345678
-
-   Se escribe así:
-   31612345678
-
-   SIN +, SIN espacios y SIN guiones.
-*/
+===================================================== */
 
 const WHATSAPP_NUMBER = "31640555065";
 
 
 /* =====================================================
-   IDIOMA
-   ===================================================== */
+   LANGUAGE SYSTEM
+===================================================== */
 
 const languageSelector =
   document.getElementById("languageSelector");
 
-const savedLanguage =
+let currentLanguage =
   localStorage.getItem("sunamitaLanguage") || "nl";
 
 
 /* =====================================================
-   TRADUCCIONES DEL FORMULARIO
-   ===================================================== */
+   TRANSLATIONS
+===================================================== */
 
-const translations = {
+const T = {
 
   nl: {
+
+    home: "Home",
+    services: "Behandelingen",
+    contact: "Contact & Afspraak",
+
+    serviceTitle: "Behandelingen & Prijzen",
 
     categoryPlaceholder:
       "-- Kies een categorie --",
@@ -58,13 +51,19 @@ const translations = {
     serviceQuestion:
       "Kies uw behandeling",
 
-    footProblemQuestion:
+    footQuestion:
       "Heeft u problemen met uw voeten?",
 
     multiple:
       "U kunt meerdere opties selecteren.",
 
-    otherProblem:
+    noProblem:
+      "Ik heb geen problemen met mijn voeten",
+
+    other:
+      "Andere",
+
+    otherDescription:
       "Beschrijf uw probleem",
 
     extraInfo:
@@ -80,58 +79,19 @@ const translations = {
       "Basisprijs:",
 
     surcharge:
-      "Toeslag bij specifieke voetproblemen:",
+      "Toeslag:",
 
-    from:
-      "vanaf €20",
-
-    noSurcharge:
+    noProblemSurcharge:
       "€0",
+
+    problemSurcharge:
+      "vanaf €20",
 
     finalPrice:
       "De definitieve prijs wordt vooraf door Susan bevestigd.",
 
-    whatsappButton:
+    appointmentButton:
       "💬 WhatsApp – Afspraak aanvragen",
-
-    directWhatsapp:
-      "💬 WhatsApp",
-
-    noProblem:
-      "Ik heb geen problemen met mijn voeten",
-
-    other:
-      "Andere",
-
-    homeSusan:
-      "Bij Susan thuis",
-
-    homeSusanSmall:
-      "Behandeling bij Susan",
-
-    yourHome:
-      "Bij u thuis",
-
-    yourHomeSmall:
-      "Susan komt bij u thuis",
-
-    salon:
-      "In de salon",
-
-    salonSmall:
-      "Behandeling in de salon",
-
-    alert:
-      "Vul alle verplichte velden in.",
-
-    alertProblem:
-      "Kies alstublieft een optie bij de voetproblemen.",
-
-    alertOther:
-      "Beschrijf alstublieft uw probleem.",
-
-    messageStart:
-      "Hallo Susan, ik wil graag een afspraak maken.",
 
     name:
       "Naam",
@@ -154,25 +114,52 @@ const translations = {
     footProblems:
       "Voetproblemen",
 
-    noFootProblems:
-      "Ik heb geen problemen met mijn voeten",
-
-    surchargeMessage:
-      "Toeslag bij voetproblemen",
-
     extra:
       "Extra informatie",
+
+    alert:
+      "Vul alle verplichte velden in.",
+
+    alertOther:
+      "Beschrijf alstublieft uw probleem.",
+
+    messageStart:
+      "Hallo Susan, ik wil graag een afspraak maken.",
 
     appointmentQuestion:
       "Ik wil graag een afspraak maken. Kunt u mij laten weten wat de totale prijs wordt en welke datum en tijd beschikbaar zijn?",
 
     thanks:
-      "Alvast bedankt!"
+      "Alvast bedankt!",
+
+    homeSusan:
+      "Bij Susan thuis",
+
+    homeSusanSmall:
+      "Behandeling bij Susan",
+
+    yourHome:
+      "Bij u thuis",
+
+    yourHomeSmall:
+      "Susan komt bij u thuis",
+
+    salon:
+      "In de salon",
+
+    salonSmall:
+      "Behandeling in de salon"
 
   },
 
 
   en: {
+
+    home: "Home",
+    services: "Services",
+    contact: "Contact & Appointment",
+
+    serviceTitle: "Services & Prices",
 
     categoryPlaceholder:
       "-- Choose a category --",
@@ -189,13 +176,19 @@ const translations = {
     serviceQuestion:
       "Choose your treatment",
 
-    footProblemQuestion:
+    footQuestion:
       "Do you have any foot concerns?",
 
     multiple:
       "You can select more than one option.",
 
-    otherProblem:
+    noProblem:
+      "I have no problems with my feet",
+
+    other:
+      "Other",
+
+    otherDescription:
       "Describe your concern",
 
     extraInfo:
@@ -211,58 +204,19 @@ const translations = {
       "Base price:",
 
     surcharge:
-      "Additional charge for specific foot concerns:",
+      "Additional charge:",
 
-    from:
-      "from €20",
-
-    noSurcharge:
+    noProblemSurcharge:
       "€0",
+
+    problemSurcharge:
+      "from €20",
 
     finalPrice:
       "The final price will be confirmed by Susan in advance.",
 
-    whatsappButton:
+    appointmentButton:
       "💬 WhatsApp – Request an appointment",
-
-    directWhatsapp:
-      "💬 WhatsApp",
-
-    noProblem:
-      "I have no foot problems",
-
-    other:
-      "Other",
-
-    homeSusan:
-      "At Susan's home",
-
-    homeSusanSmall:
-      "Treatment at Susan's home",
-
-    yourHome:
-      "At your home",
-
-    yourHomeSmall:
-      "Susan comes to your home",
-
-    salon:
-      "At the salon",
-
-    salonSmall:
-      "Treatment at the salon",
-
-    alert:
-      "Please complete all required fields.",
-
-    alertProblem:
-      "Please select an option for your foot concerns.",
-
-    alertOther:
-      "Please describe your concern.",
-
-    messageStart:
-      "Hello Susan, I would like to make an appointment.",
 
     name:
       "Name",
@@ -285,25 +239,52 @@ const translations = {
     footProblems:
       "Foot concerns",
 
-    noFootProblems:
-      "I have no foot problems",
-
-    surchargeMessage:
-      "Additional charge for foot concerns",
-
     extra:
       "Additional information",
+
+    alert:
+      "Please complete all required fields.",
+
+    alertOther:
+      "Please describe your concern.",
+
+    messageStart:
+      "Hello Susan, I would like to make an appointment.",
 
     appointmentQuestion:
       "I would like to make an appointment. Could you please let me know the total price and which date and time are available?",
 
     thanks:
-      "Thank you!"
+      "Thank you!",
+
+    homeSusan:
+      "At Susan's home",
+
+    homeSusanSmall:
+      "Treatment at Susan's home",
+
+    yourHome:
+      "At your home",
+
+    yourHomeSmall:
+      "Susan comes to your home",
+
+    salon:
+      "At the salon",
+
+    salonSmall:
+      "Treatment at the salon"
 
   },
 
 
   es: {
+
+    home: "Inicio",
+    services: "Servicios",
+    contact: "Contacto y Cita",
+
+    serviceTitle: "Servicios y Precios",
 
     categoryPlaceholder:
       "-- Elige una categoría --",
@@ -320,13 +301,19 @@ const translations = {
     serviceQuestion:
       "Elige tu tratamiento",
 
-    footProblemQuestion:
+    footQuestion:
       "¿Tienes algún problema en los pies?",
 
     multiple:
       "Puedes seleccionar varias opciones.",
 
-    otherProblem:
+    noProblem:
+      "No tengo problemas en los pies",
+
+    other:
+      "Otro",
+
+    otherDescription:
       "Describe tu problema",
 
     extraInfo:
@@ -342,58 +329,19 @@ const translations = {
       "Precio base:",
 
     surcharge:
-      "Suplemento por problemas específicos de los pies:",
+      "Suplemento:",
 
-    from:
-      "desde €20",
-
-    noSurcharge:
+    noProblemSurcharge:
       "€0",
+
+    problemSurcharge:
+      "desde €20",
 
     finalPrice:
       "Susan confirmará el precio final antes de la cita.",
 
-    whatsappButton:
+    appointmentButton:
       "💬 WhatsApp – Solicitar una cita",
-
-    directWhatsapp:
-      "💬 WhatsApp",
-
-    noProblem:
-      "No tengo problemas en los pies",
-
-    other:
-      "Otro",
-
-    homeSusan:
-      "En casa de Susan",
-
-    homeSusanSmall:
-      "Tratamiento en casa de Susan",
-
-    yourHome:
-      "En su domicilio",
-
-    yourHomeSmall:
-      "Susan va a su domicilio",
-
-    salon:
-      "En el salón",
-
-    salonSmall:
-      "Tratamiento en el salón",
-
-    alert:
-      "Por favor completa todos los campos obligatorios.",
-
-    alertProblem:
-      "Por favor selecciona una opción sobre los problemas de tus pies.",
-
-    alertOther:
-      "Por favor describe tu problema.",
-
-    messageStart:
-      "Hola Susan, quisiera solicitar una cita.",
 
     name:
       "Nombre",
@@ -416,20 +364,41 @@ const translations = {
     footProblems:
       "Problemas de los pies",
 
-    noFootProblems:
-      "No tengo problemas en los pies",
-
-    surchargeMessage:
-      "Suplemento por problemas de los pies",
-
     extra:
       "Información adicional",
+
+    alert:
+      "Por favor completa todos los campos obligatorios.",
+
+    alertOther:
+      "Por favor describe tu problema.",
+
+    messageStart:
+      "Hola Susan, quisiera solicitar una cita.",
 
     appointmentQuestion:
       "Quisiera solicitar una cita. ¿Podrías decirme cuál sería el precio total y qué fecha y hora están disponibles?",
 
     thanks:
-      "¡Muchas gracias!"
+      "¡Muchas gracias!",
+
+    homeSusan:
+      "En casa de Susan",
+
+    homeSusanSmall:
+      "Tratamiento en casa de Susan",
+
+    yourHome:
+      "En su domicilio",
+
+    yourHomeSmall:
+      "Susan va a su domicilio",
+
+    salon:
+      "En el salón",
+
+    salonSmall:
+      "Tratamiento en el salón"
 
   }
 
@@ -437,8 +406,8 @@ const translations = {
 
 
 /* =====================================================
-   SERVICIOS
-   ===================================================== */
+   SERVICES
+===================================================== */
 
 const services = {
 
@@ -756,224 +725,127 @@ const services = {
 
 
 /* =====================================================
-   CAMBIO DE IDIOMA
-   ===================================================== */
+   FOOT PROBLEMS
+===================================================== */
 
-function changeLanguage(language) {
+const footProblems = {
 
-  localStorage.setItem(
-    "sunamitaLanguage",
-    language
-  );
+  "Schimmelnagels": {
+    nl: "Schimmelnagels",
+    en: "Fungal nails",
+    es: "Hongos en las uñas"
+  },
 
-  document.documentElement.lang =
-    language;
+  "Verdikte nagels": {
+    nl: "Verdikte nagels",
+    en: "Thickened nails",
+    es: "Uñas engrosadas"
+  },
 
+  "Zwakke nagels": {
+    nl: "Zwakke nagels",
+    en: "Weak nails",
+    es: "Uñas débiles"
+  },
 
-  /*
-     Cambiar textos data-nl / data-en / data-es
-  */
+  "Ingegroeide nagel": {
+    nl: "Ingegroeide nagel",
+    en: "Ingrown nail",
+    es: "Uña encarnada"
+  },
 
-  document
-    .querySelectorAll(
-      "[data-nl], [data-en], [data-es]"
-    )
-    .forEach(element => {
+  "Psoriasis aan de voeten": {
+    nl: "Psoriasis aan de voeten",
+    en: "Psoriasis on the feet",
+    es: "Psoriasis en los pies"
+  },
 
-      const translation =
-        element.getAttribute(
-          "data-" + language
-        );
+  "Likdoorn": {
+    nl: "Likdoorn",
+    en: "Corn",
+    es: "Callo"
+  },
 
-      if (translation !== null) {
+  "Kloven / ragades": {
+    nl: "Kloven / ragades",
+    en: "Cracked skin / fissures",
+    es: "Grietas / fisuras"
+  },
 
-        element.textContent =
-          translation;
+  "Voetpijn": {
+    nl: "Voetpijn",
+    en: "Foot pain",
+    es: "Dolor de pies"
+  },
 
-      }
-
-    });
-
-
-  /*
-     Actualizar formulario
-  */
-
-  updateFormTexts(language);
-
-
-  /*
-     Actualizar tratamientos
-  */
-
-  updateServiceOptions(language);
-
-
-  /*
-     Actualizar botón WhatsApp
-  */
-
-  const whatsappButton =
-    document.querySelector(
-      ".whatsapp-button"
-    );
-
-  if (whatsappButton) {
-
-    whatsappButton.textContent =
-      translations[language].whatsappButton;
-
+  "Andere": {
+    nl: "Andere",
+    en: "Other",
+    es: "Otro"
   }
 
-
-  const directWhatsapp =
-    document.getElementById(
-      "directWhatsapp"
-    );
-
-  if (directWhatsapp) {
-
-    directWhatsapp.textContent =
-      translations[language].directWhatsapp;
-
-  }
-
-}
+};
 
 
 /* =====================================================
-   FORMULARIO — TEXTOS
-   ===================================================== */
-
-function updateFormTexts(language) {
-
-  const t =
-    translations[language];
-
-
-  const category =
-    document.getElementById(
-      "category"
-    );
-
-  const service =
-    document.getElementById(
-      "service"
-    );
-
-
-  if (category) {
-
-    if (!category.value) {
-
-      category.options[0].text =
-        t.categoryPlaceholder;
-
-    }
-
-  }
-
-
-  if (service) {
-
-    if (!service.value) {
-
-      service.options[0].text =
-        t.servicePlaceholder;
-
-    }
-
-  }
-
-
-  const otherLabel =
-    document.querySelector(
-      'label[for="otherProblem"]'
-    );
-
-  if (otherLabel) {
-
-    otherLabel.textContent =
-      t.otherProblem + " *";
-
-  }
-
-
-  const messageLabel =
-    document.querySelector(
-      'label[for="message"]'
-    );
-
-  if (messageLabel) {
-
-    messageLabel.textContent =
-      t.extraInfo + " (" +
-      t.optional +
-      ")";
-
-  }
-
-}
-
-
-/* =====================================================
-   CATEGORÍAS
-   ===================================================== */
+   ELEMENTS
+===================================================== */
 
 const categorySelect =
-  document.getElementById(
-    "category"
-  );
+  document.getElementById("category");
 
 const serviceSelect =
-  document.getElementById(
-    "service"
+  document.getElementById("service");
+
+const footProblemGroup =
+  document.getElementById("footProblemGroup");
+
+const noProblem =
+  document.getElementById("noProblem");
+
+const problemCheckboxes =
+  document.querySelectorAll(
+    'input[name="problem"]'
   );
-
-
-if (categorySelect) {
-
-  categorySelect.addEventListener(
-    "change",
-    function () {
-
-      updateServiceOptions(
-        getLanguage()
-      );
-
-      updatePrice();
-
-    }
-  );
-
-}
 
 
 /* =====================================================
-   SERVICIOS SEGÚN CATEGORÍA
-   ===================================================== */
+   IS THIS A FOOT SERVICE?
+===================================================== */
 
-function updateServiceOptions(language) {
+function isFootService() {
 
-  if (!categorySelect ||
-      !serviceSelect) {
-
-    return;
-
+  if (!categorySelect) {
+    return false;
   }
-
 
   const category =
     categorySelect.value;
 
+  return (
+    category === "feet" ||
+    category === "spa" ||
+    category === "reflex"
+  );
 
-  /*
-     Guardar el servicio seleccionado
-     antes de reconstruir.
-  */
+}
 
-  const previousValue =
-    serviceSelect.value;
+
+/* =====================================================
+   LOAD SERVICES
+===================================================== */
+
+function loadServices() {
+
+  if (
+    !categorySelect ||
+    !serviceSelect
+  ) {
+    return;
+  }
+
+  const category =
+    categorySelect.value;
 
 
   serviceSelect.innerHTML =
@@ -981,15 +853,13 @@ function updateServiceOptions(language) {
 
 
   const placeholder =
-    document.createElement(
-      "option"
-    );
+    document.createElement("option");
 
   placeholder.value =
     "";
 
   placeholder.textContent =
-    translations[language]
+    T[currentLanguage]
       .servicePlaceholder;
 
 
@@ -998,59 +868,39 @@ function updateServiceOptions(language) {
   );
 
 
-  if (!category ||
-      !services[category]) {
+  if (
+    !category ||
+    !services[category]
+  ) {
+
+    updateFootProblemVisibility();
 
     return;
 
   }
 
 
-  services[category]
-    .forEach(
-      (service, index) => {
+  services[category].forEach(
+    (service, index) => {
 
-        const option =
-          document.createElement(
-            "option"
-          );
+      const option =
+        document.createElement("option");
 
+      option.value =
+        category + "-" + index;
 
-        option.value =
-          category + "-" + index;
+      option.textContent =
+        service[currentLanguage];
 
+      serviceSelect.appendChild(
+        option
+      );
 
-        option.textContent =
-          service[language];
-
-
-        serviceSelect.appendChild(
-          option
-        );
-
-      }
-    );
+    }
+  );
 
 
-  /*
-     Intentar mantener selección anterior
-  */
-
-  if (
-    previousValue &&
-    Array.from(
-      serviceSelect.options
-    ).some(
-      option =>
-        option.value === previousValue
-    )
-  ) {
-
-    serviceSelect.value =
-      previousValue;
-
-  }
-
+  updateFootProblemVisibility();
 
   updatePrice();
 
@@ -1058,16 +908,16 @@ function updateServiceOptions(language) {
 
 
 /* =====================================================
-   CAMBIO DE SERVICIO
-   ===================================================== */
+   CATEGORY CHANGE
+===================================================== */
 
-if (serviceSelect) {
+if (categorySelect) {
 
-  serviceSelect.addEventListener(
+  categorySelect.addEventListener(
     "change",
-    function () {
+    function() {
 
-      updatePrice();
+      loadServices();
 
     }
   );
@@ -1076,52 +926,15 @@ if (serviceSelect) {
 
 
 /* =====================================================
-   UBICACIÓN
-   ===================================================== */
-
-const locationRadios =
-  document.querySelectorAll(
-    'input[name="location"]'
-  );
-
-
-locationRadios.forEach(
-  radio => {
-
-    radio.addEventListener(
-      "change",
-      function () {
-
-        updatePrice();
-
-      }
-    );
-
-  }
-);
-
-
-/* =====================================================
-   OBTENER IDIOMA
-   ===================================================== */
-
-function getLanguage() {
-
-  return localStorage.getItem(
-    "sunamitaLanguage"
-  ) || "nl";
-
-}
-
-
-/* =====================================================
-   OBTENER SERVICIO
-   ===================================================== */
+   SELECTED SERVICE
+===================================================== */
 
 function getSelectedService() {
 
-  if (!serviceSelect ||
-      !serviceSelect.value) {
+  if (
+    !serviceSelect ||
+    !serviceSelect.value
+  ) {
 
     return null;
 
@@ -1134,7 +947,6 @@ function getSelectedService() {
 
   const category =
     parts[0];
-
 
   const index =
     parseInt(parts[1]);
@@ -1156,10 +968,118 @@ function getSelectedService() {
 
 
 /* =====================================================
-   OBTENER UBICACIÓN
-   ===================================================== */
+   FOOT PROBLEM VISIBILITY
+===================================================== */
 
-function getSelectedLocation() {
+function updateFootProblemVisibility() {
+
+  if (!footProblemGroup) {
+    return;
+  }
+
+
+  if (isFootService()) {
+
+    footProblemGroup.style.display =
+      "block";
+
+  } else {
+
+    footProblemGroup.style.display =
+      "none";
+
+
+    problemCheckboxes.forEach(
+      checkbox => {
+
+        checkbox.checked =
+          false;
+
+      }
+    );
+
+
+    const other =
+      document.getElementById(
+        "otherProblem"
+      );
+
+    if (other) {
+
+      other.value =
+        "";
+
+      other.required =
+        false;
+
+    }
+
+
+    const otherContainer =
+      document.getElementById(
+        "otherProblemContainer"
+      );
+
+    if (otherContainer) {
+
+      otherContainer.style.display =
+        "none";
+
+    }
+
+  }
+
+
+  updatePrice();
+
+}
+
+
+/* =====================================================
+   SERVICE CHANGE
+===================================================== */
+
+if (serviceSelect) {
+
+  serviceSelect.addEventListener(
+    "change",
+    function() {
+
+      updateFootProblemVisibility();
+
+      updatePrice();
+
+    }
+  );
+
+}
+
+
+/* =====================================================
+   LOCATION
+===================================================== */
+
+document
+  .querySelectorAll(
+    'input[name="location"]'
+  )
+  .forEach(
+    radio => {
+
+      radio.addEventListener(
+        "change",
+        updatePrice
+      );
+
+    }
+  );
+
+
+/* =====================================================
+   LOCATION KEY
+===================================================== */
+
+function getLocationKey() {
 
   const selected =
     document.querySelector(
@@ -1168,9 +1088,7 @@ function getSelectedLocation() {
 
 
   if (!selected) {
-
     return null;
-
   }
 
 
@@ -1180,268 +1098,62 @@ function getSelectedLocation() {
 
 
 /* =====================================================
-   PRECIO
-   ===================================================== */
+   LOCATION NAME
+===================================================== */
 
-function updatePrice() {
+function getLocationName(
+  key,
+  language
+) {
 
-  const service =
-    getSelectedService();
+  const locations = {
 
+    home: {
 
-  const location =
-    getSelectedLocation();
+      nl: "Bij Susan thuis",
+      en: "At Susan's home",
+      es: "En casa de Susan"
 
+    },
 
-  const preview =
-    document.getElementById(
-      "pricePreview"
-    );
+    domicilio: {
 
+      nl: "Bij u thuis",
+      en: "At your home",
+      es: "En su domicilio"
 
-  const basePrice =
-    document.getElementById(
-      "basePrice"
-    );
+    },
 
+    salon: {
 
-  if (
-    !service ||
-    !location ||
-    !preview ||
-    !basePrice
-  ) {
-
-    if (preview) {
-
-      preview.style.display =
-        "none";
+      nl: "In de salon",
+      en: "At the salon",
+      es: "En el salón"
 
     }
 
-    return;
-
-  }
+  };
 
 
-  const price =
-    service.prices[location];
-
-
-  basePrice.textContent =
-    formatPrice(price);
-
-
-  preview.style.display =
-    "block";
-
-
-  updatePriceTexts();
+  return locations[key][language];
 
 }
 
 
 /* =====================================================
-   TEXTOS DEL PRECIO
-   ===================================================== */
-
-function updatePriceTexts() {
-
-  const language =
-    getLanguage();
-
-
-  const t =
-    translations[language];
-
-
-  const preview =
-    document.getElementById(
-      "pricePreview"
-    );
-
-
-  if (!preview) {
-
-    return;
-
-  }
-
-
-  const title =
-    preview.querySelector(
-      "h3"
-    );
-
-
-  if (title) {
-
-    title.textContent =
-      t.priceTitle;
-
-  }
-
-
-  const paragraphs =
-    preview.querySelectorAll(
-      "p"
-    );
-
-
-  if (paragraphs[0]) {
-
-    paragraphs[0].childNodes[0]
-      .textContent =
-      t.basePrice + " ";
-
-  }
-
-
-  if (paragraphs[1]) {
-
-    paragraphs[1].childNodes[0]
-      .textContent =
-      t.surcharge + " ";
-
-  }
-
-
-  if (paragraphs[2]) {
-
-    paragraphs[2].textContent =
-      t.finalPrice;
-
-  }
-
-}
-
-
-/* =====================================================
-   FORMATO PRECIO
-   ===================================================== */
-
-function formatPrice(price) {
-
-  return new Intl.NumberFormat(
-    "nl-NL",
-    {
-      style: "currency",
-      currency: "EUR"
-    }
-  ).format(price);
-
-}
-
-
-/* =====================================================
-   PROBLEMAS DE PIES
-   ===================================================== */
-
-const noProblem =
-  document.getElementById(
-    "noProblem"
-  );
-
-
-const problemCheckboxes =
-  document.querySelectorAll(
-    'input[name="problem"]'
-  );
-
-
-/*
-   Si selecciona:
-   "Ik heb geen problemen..."
-   desmarcamos los demás.
-*/
-
-if (noProblem) {
-
-  noProblem.addEventListener(
-    "change",
-    function () {
-
-      if (this.checked) {
-
-        problemCheckboxes
-          .forEach(
-            checkbox => {
-
-              if (
-                checkbox !==
-                noProblem
-              ) {
-
-                checkbox.checked =
-                  false;
-
-              }
-
-            }
-          );
-
-      }
-
-      updateOtherProblem();
-
-    }
-  );
-
-}
-
-
-/*
-   Si selecciona un problema,
-   quitamos "No tengo problemas".
-*/
-
-problemCheckboxes.forEach(
-  checkbox => {
-
-    if (
-      checkbox !==
-      noProblem
-    ) {
-
-      checkbox.addEventListener(
-        "change",
-        function () {
-
-          if (
-            this.checked &&
-            noProblem
-          ) {
-
-            noProblem.checked =
-              false;
-
-          }
-
-          updateOtherProblem();
-
-        }
-      );
-
-    }
-
-  }
-);
-
-
-/* =====================================================
-   OTRO PROBLEMA
-   ===================================================== */
+   FOOT PROBLEMS — OTHER
+===================================================== */
 
 function updateOtherProblem() {
 
   const otherCheckbox =
-    Array.from(
-      problemCheckboxes
-    ).find(
-      checkbox =>
-        checkbox.value ===
-        "Andere"
-    );
+    Array
+      .from(problemCheckboxes)
+      .find(
+        checkbox =>
+          checkbox.value ===
+          "Andere"
+      );
 
 
   const container =
@@ -1457,9 +1169,7 @@ function updateOtherProblem() {
 
 
   if (!container) {
-
     return;
-
   }
 
 
@@ -1501,10 +1211,91 @@ function updateOtherProblem() {
 
 
 /* =====================================================
-   OBTENER PROBLEMAS
-   ===================================================== */
+   NO FOOT PROBLEMS
+===================================================== */
 
-function getFootProblems() {
+if (noProblem) {
+
+  noProblem.addEventListener(
+    "change",
+    function() {
+
+      if (this.checked) {
+
+        problemCheckboxes
+          .forEach(
+            checkbox => {
+
+              if (
+                checkbox !==
+                noProblem
+              ) {
+
+                checkbox.checked =
+                  false;
+
+              }
+
+            }
+          );
+
+      }
+
+      updateOtherProblem();
+
+      updatePrice();
+
+    }
+  );
+
+}
+
+
+/* =====================================================
+   OTHER FOOT PROBLEMS
+===================================================== */
+
+problemCheckboxes.forEach(
+  checkbox => {
+
+    if (
+      checkbox !==
+      noProblem
+    ) {
+
+      checkbox.addEventListener(
+        "change",
+        function() {
+
+          if (
+            this.checked &&
+            noProblem
+          ) {
+
+            noProblem.checked =
+              false;
+
+          }
+
+
+          updateOtherProblem();
+
+          updatePrice();
+
+        }
+      );
+
+    }
+
+  }
+);
+
+
+/* =====================================================
+   GET PROBLEMS
+===================================================== */
+
+function getProblems() {
 
   return Array
     .from(
@@ -1521,8 +1312,1005 @@ function getFootProblems() {
 
 
 /* =====================================================
-   FORMULARIO WHATSAPP
-   ===================================================== */
+   PRICE
+===================================================== */
+
+function updatePrice() {
+
+  const preview =
+    document.getElementById(
+      "pricePreview"
+    );
+
+
+  const basePriceElement =
+    document.getElementById(
+      "basePrice"
+    );
+
+
+  const surchargeElement =
+    document.getElementById(
+      "surchargeAmount"
+    );
+
+
+  const service =
+    getSelectedService();
+
+
+  const location =
+    getLocationKey();
+
+
+  if (
+    !preview ||
+    !basePriceElement ||
+    !service ||
+    !location
+  ) {
+
+    if (preview) {
+
+      preview.style.display =
+        "none";
+
+    }
+
+    return;
+
+  }
+
+
+  const basePrice =
+    service.prices[location];
+
+
+  basePriceElement.textContent =
+    formatPrice(basePrice);
+
+
+  /*
+     SUPLEMENTO
+  */
+
+  if (surchargeElement) {
+
+    if (!isFootService()) {
+
+      surchargeElement.textContent =
+        "€0";
+
+    } else {
+
+      const problems =
+        getProblems();
+
+
+      if (
+        problems.length === 0 ||
+        problems.includes(
+          "Ik heb geen problemen met mijn voeten"
+        )
+      ) {
+
+        surchargeElement.textContent =
+          T[currentLanguage]
+            .noProblemSurcharge;
+
+      } else {
+
+        surchargeElement.textContent =
+          T[currentLanguage]
+            .problemSurcharge;
+
+      }
+
+    }
+
+  }
+
+
+  preview.style.display =
+    "block";
+
+
+  updatePricePreviewLabels();
+
+}
+
+
+/* =====================================================
+   PRICE LABELS
+===================================================== */
+
+function updatePricePreviewLabels() {
+
+  const preview =
+    document.getElementById(
+      "pricePreview"
+    );
+
+
+  if (!preview) {
+    return;
+  }
+
+
+  const t =
+    T[currentLanguage];
+
+
+  const title =
+    preview.querySelector(
+      "h3"
+    );
+
+
+  if (title) {
+
+    title.textContent =
+      t.priceTitle;
+
+  }
+
+
+  const surchargeText =
+    document.getElementById(
+      "surchargeText"
+    );
+
+
+  if (surchargeText) {
+
+    surchargeText.textContent =
+      t.surcharge;
+
+  }
+
+
+  const note =
+    preview.querySelector(
+      ".price-note"
+    );
+
+
+  if (note) {
+
+    note.textContent =
+      t.finalPrice;
+
+  }
+
+}
+
+
+/* =====================================================
+   FORMAT PRICE
+===================================================== */
+
+function formatPrice(price) {
+
+  return new Intl.NumberFormat(
+    "nl-NL",
+    {
+      style: "currency",
+      currency: "EUR"
+    }
+  ).format(price);
+
+}
+
+
+/* =====================================================
+   LANGUAGE CHANGE
+===================================================== */
+
+function changeLanguage(language) {
+
+  currentLanguage =
+    language;
+
+
+  localStorage.setItem(
+    "sunamitaLanguage",
+    language
+  );
+
+
+  document.documentElement.lang =
+    language;
+
+
+  /*
+     HTML DATA TRANSLATIONS
+  */
+
+  document
+    .querySelectorAll(
+      "[data-nl], [data-en], [data-es]"
+    )
+    .forEach(
+      element => {
+
+        const value =
+          element.getAttribute(
+            "data-" + language
+          );
+
+
+        if (
+          value !== null
+        ) {
+
+          element.textContent =
+            value;
+
+        }
+
+      }
+    );
+
+
+  translateMenu();
+
+  translateLocations();
+
+  translateForm();
+
+
+  /*
+     SERVICES PAGE
+  */
+
+  translateServicesPage();
+
+
+  /*
+     FORM SERVICES
+  */
+
+  if (categorySelect) {
+
+    loadServices();
+
+  }
+
+
+  updatePrice();
+
+}
+
+
+/* =====================================================
+   MENU
+===================================================== */
+
+function translateMenu() {
+
+  const t =
+    T[currentLanguage];
+
+
+  document
+    .querySelectorAll(
+      'nav a[href="index.html"]'
+    )
+    .forEach(
+      element => {
+
+        element.textContent =
+          t.home;
+
+      }
+    );
+
+
+  document
+    .querySelectorAll(
+      'nav a[href="services.html"]'
+    )
+    .forEach(
+      element => {
+
+        element.textContent =
+          t.services;
+
+      }
+    );
+
+
+  document
+    .querySelectorAll(
+      'nav a[href="contact.html"]'
+    )
+    .forEach(
+      element => {
+
+        element.textContent =
+          t.contact;
+
+      }
+    );
+
+}
+
+
+/* =====================================================
+   LOCATION TRANSLATION
+===================================================== */
+
+function translateLocations() {
+
+  const t =
+    T[currentLanguage];
+
+
+  document
+    .querySelectorAll(
+      'input[name="location"]'
+    )
+    .forEach(
+      input => {
+
+        const card =
+          input.closest(
+            ".option-card"
+          );
+
+
+        if (!card) {
+          return;
+        }
+
+
+        const strong =
+          card.querySelector(
+            "strong"
+          );
+
+
+        const small =
+          card.querySelector(
+            "small"
+          );
+
+
+        if (
+          input.dataset.priceColumn ===
+          "home"
+        ) {
+
+          if (strong) {
+
+            strong.textContent =
+              t.homeSusan;
+
+          }
+
+
+          if (small) {
+
+            small.textContent =
+              t.homeSusanSmall;
+
+          }
+
+        }
+
+
+        if (
+          input.dataset.priceColumn ===
+          "domicilio"
+        ) {
+
+          if (strong) {
+
+            strong.textContent =
+              t.yourHome;
+
+          }
+
+
+          if (small) {
+
+            small.textContent =
+              t.yourHomeSmall;
+
+          }
+
+        }
+
+
+        if (
+          input.dataset.priceColumn ===
+          "salon"
+        ) {
+
+          if (strong) {
+
+            strong.textContent =
+              t.salon;
+
+          }
+
+
+          if (small) {
+
+            small.textContent =
+              t.salonSmall;
+
+          }
+
+        }
+
+      }
+    );
+
+}
+
+
+/* =====================================================
+   FORM TRANSLATION
+===================================================== */
+
+function translateForm() {
+
+  const t =
+    T[currentLanguage];
+
+
+  const category =
+    document.getElementById(
+      "category"
+    );
+
+
+  const service =
+    document.getElementById(
+      "service"
+    );
+
+
+  if (
+    category &&
+    !category.value
+  ) {
+
+    category.options[0].text =
+      t.categoryPlaceholder;
+
+  }
+
+
+  if (
+    service &&
+    !service.value
+  ) {
+
+    service.options[0].text =
+      t.servicePlaceholder;
+
+  }
+
+
+  const footTitle =
+    document.querySelector(
+      "#footProblemGroup > label"
+    );
+
+
+  if (footTitle) {
+
+    footTitle.textContent =
+      t.footQuestion;
+
+  }
+
+
+  const help =
+    document.querySelector(
+      "#footProblemGroup .help-text"
+    );
+
+
+  if (help) {
+
+    help.textContent =
+      t.multiple;
+
+  }
+
+
+  const noProblemLabel =
+    document.querySelector(
+      'label.no-problem strong'
+    );
+
+
+  if (noProblemLabel) {
+
+    noProblemLabel.textContent =
+      t.noProblem;
+
+  }
+
+
+  const otherContainer =
+    document.getElementById(
+      "otherProblemContainer"
+    );
+
+
+  if (otherContainer) {
+
+    const label =
+      otherContainer.querySelector(
+        "label"
+      );
+
+
+    if (label) {
+
+      label.textContent =
+        t.otherDescription + " *";
+
+    }
+
+  }
+
+
+  const messageLabel =
+    document.querySelector(
+      'label[for="message"]'
+    );
+
+
+  if (messageLabel) {
+
+    messageLabel.textContent =
+      t.extraInfo +
+      " (" +
+      t.optional +
+      ")";
+
+  }
+
+
+  const button =
+    document.querySelector(
+      ".whatsapp-button"
+    );
+
+
+  if (button) {
+
+    button.textContent =
+      t.appointmentButton;
+
+  }
+
+
+  updatePricePreviewLabels();
+
+}
+
+
+/* =====================================================
+   SERVICES PAGE TRANSLATIONS
+===================================================== */
+
+const staticTranslations = {
+
+  "Behandelingen & Prijzen": {
+    en: "Services & Prices",
+    es: "Servicios y Precios"
+  },
+
+  "Kies de behandeling die bij u past.": {
+    en: "Choose the treatment that suits you.",
+    es: "Elige el tratamiento que mejor se adapte a ti."
+  },
+
+  "💆 Massages": {
+    en: "💆 Massages",
+    es: "💆 Masajes"
+  },
+
+  "🦶 Voetverzorging & Pedicure": {
+    en: "🦶 Foot Care & Pedicure",
+    es: "🦶 Cuidado de Pies y Pedicura"
+  },
+
+  "💅 Nagelverzorging": {
+    en: "💅 Nail Care",
+    es: "💅 Cuidado de Uñas"
+  },
+
+  "🌿 Spa Pedicure": {
+    en: "🌿 Spa Pedicure",
+    es: "🌿 Spa Pedicura"
+  },
+
+  "🌸 Voetreflexologie & Lymfatische massage": {
+    en: "🌸 Foot Reflexology & Lymphatic Massage",
+    es: "🌸 Reflexología Podal y Masaje Linfático"
+  },
+
+  "🦶 Voetproblemen": {
+    en: "🦶 Foot Concerns",
+    es: "🦶 Problemas de los Pies"
+  },
+
+  "Heeft u een specifiek probleem met uw voeten, zoals schimmelnagels, verdikte nagels, zwakke nagels, ingegroeide nagels, psoriasis, likdoorns of kloven?": {
+    en: "Do you have a specific foot concern, such as fungal nails, thickened nails, weak nails, ingrown nails, psoriasis, corns or cracked skin?",
+    es: "¿Tienes un problema específico en los pies, como hongos en las uñas, uñas engrosadas, uñas débiles, uñas encarnadas, psoriasis, callos o grietas?"
+  },
+
+  "Voor specifieke voetproblemen kan een toeslag vanaf €20 worden berekend, afhankelijk van de behandeling en de ernst van het probleem. De definitieve prijs wordt vooraf met u besproken.": {
+    en: "For specific foot concerns, an additional charge from €20 may apply depending on the treatment and severity. The final price will be discussed with you in advance.",
+    es: "Para problemas específicos de los pies puede aplicarse un suplemento desde €20, dependiendo del tratamiento y la gravedad. El precio final se confirmará previamente."
+  },
+
+  "Wilt u een afspraak maken?": {
+    en: "Would you like to make an appointment?",
+    es: "¿Quieres solicitar una cita?"
+  },
+
+  "Afspraak aanvragen": {
+    en: "Request an appointment",
+    es: "Solicitar una cita"
+  }
+
+};
+
+
+const serviceNameTranslations = {
+
+  "Lichaamsmassage 30 min": {
+    en: "Body massage 30 min",
+    es: "Masaje corporal 30 min"
+  },
+
+  "Lichaamsmassage 60 min": {
+    en: "Body massage 60 min",
+    es: "Masaje corporal 60 min"
+  },
+
+  "Rug, schouders & nek 30 min": {
+    en: "Back, shoulders & neck 30 min",
+    es: "Espalda, hombros y cuello 30 min"
+  },
+
+  "Rug, schouders & nek 60 min": {
+    en: "Back, shoulders & neck 60 min",
+    es: "Espalda, hombros y cuello 60 min"
+  },
+
+  "Hoofd & gezichtsmassage 30 min": {
+    en: "Head & facial massage 30 min",
+    es: "Masaje de cabeza y rostro 30 min"
+  },
+
+  "Hoofd & gezichtsmassage 60 min": {
+    en: "Head & facial massage 60 min",
+    es: "Masaje de cabeza y rostro 60 min"
+  },
+
+  "Lymfatische massage 30 min": {
+    en: "Lymphatic massage 30 min",
+    es: "Masaje linfático 30 min"
+  },
+
+  "Lymfatische massage 60 min": {
+    en: "Lymphatic massage 60 min",
+    es: "Masaje linfático 60 min"
+  },
+
+  "Basis pedicure": {
+    en: "Basic pedicure",
+    es: "Pedicura básica"
+  },
+
+  "Pedicure + normale lak": {
+    en: "Pedicure + regular polish",
+    es: "Pedicura + esmalte normal"
+  },
+
+  "Pedicure + gellak": {
+    en: "Pedicure + gel polish",
+    es: "Pedicura + esmalte gel"
+  },
+
+  "Alleen nagels knippen & vijlen": {
+    en: "Nail trimming & filing only",
+    es: "Solo cortar y limar uñas"
+  },
+
+  "Schimmelnagelbehandeling": {
+    en: "Fungal nail treatment",
+    es: "Tratamiento de hongos en las uñas"
+  },
+
+  "Ingegroeide nagel": {
+    en: "Ingrown nail",
+    es: "Uña encarnada"
+  },
+
+  "Verdikte nagels": {
+    en: "Thickened nails",
+    es: "Uñas engrosadas"
+  },
+
+  "Likdoorn verwijderen": {
+    en: "Corn removal",
+    es: "Eliminación de callo"
+  },
+
+  "Kloven / ragades": {
+    en: "Cracked skin / fissures",
+    es: "Grietas / fisuras"
+  },
+
+  "Manicure + normale lak": {
+    en: "Manicure + regular polish",
+    es: "Manicura + esmalte normal"
+  },
+
+  "Manicure + gellak": {
+    en: "Manicure + gel polish",
+    es: "Manicura + esmalte gel"
+  },
+
+  "BIAB behandeling": {
+    en: "BIAB treatment",
+    es: "Tratamiento BIAB"
+  },
+
+  "Dip Powder": {
+    en: "Dip Powder",
+    es: "Dip Powder"
+  },
+
+  "Spa Pedicure All-in": {
+    en: "All-in Spa Pedicure",
+    es: "Spa Pedicura All-in"
+  },
+
+  "Spa Pedicure + normale lak": {
+    en: "Spa Pedicure + regular polish",
+    es: "Spa Pedicura + esmalte normal"
+  },
+
+  "Spa Pedicure + gellak": {
+    en: "Spa Pedicure + gel polish",
+    es: "Spa Pedicura + esmalte gel"
+  },
+
+  "Voetreflexologie 30 min": {
+    en: "Foot reflexology 30 min",
+    es: "Reflexología podal 30 min"
+  },
+
+  "Voetreflexologie 60 min": {
+    en: "Foot reflexology 60 min",
+    es: "Reflexología podal 60 min"
+  }
+
+};
+
+
+/* =====================================================
+   TRANSLATE SERVICES PAGE
+===================================================== */
+
+function translateServicesPage() {
+
+  const page =
+    window.location.pathname
+      .toLowerCase()
+      .includes("services.html");
+
+
+  if (!page) {
+    return;
+  }
+
+
+  const language =
+    currentLanguage;
+
+
+  document
+    .querySelectorAll(
+      "h1, h2, h3, p, span, a"
+    )
+    .forEach(
+      element => {
+
+        const original =
+          element.textContent.trim();
+
+
+        if (
+          staticTranslations[
+            original
+          ]
+        ) {
+
+          element.textContent =
+            staticTranslations[
+              original
+            ][language] ||
+            original;
+
+          return;
+
+        }
+
+
+        if (
+          serviceNameTranslations[
+            original
+          ]
+        ) {
+
+          element.textContent =
+            serviceNameTranslations[
+              original
+            ][language] ||
+            original;
+
+        }
+
+      }
+    );
+
+
+  /*
+     TABLE HEADER
+  */
+
+  document
+    .querySelectorAll(
+      ".price-header span"
+    )
+    .forEach(
+      span => {
+
+        const text =
+          span.textContent.trim();
+
+
+        if (
+          text ===
+          "Behandeling" ||
+          text ===
+          "Treatment" ||
+          text ===
+          "Tratamiento"
+        ) {
+
+          span.textContent =
+            language === "en"
+              ? "Treatment"
+              : language === "es"
+                ? "Tratamiento"
+                : "Behandeling";
+
+        }
+
+
+        if (
+          text.includes(
+            "Casa Suzan"
+          ) ||
+          text.includes(
+            "Bij Susan thuis"
+          ) ||
+          text.includes(
+            "Susan's home"
+          ) ||
+          text.includes(
+            "Casa de Susan"
+          )
+        ) {
+
+          span.textContent =
+            language === "en"
+              ? "🏡 Susan's home"
+              : language === "es"
+                ? "🏡 Casa de Susan"
+                : "🏡 Bij Susan thuis";
+
+        }
+
+
+        if (
+          text.includes(
+            "Domicilio"
+          ) ||
+          text.includes(
+            "Bij u thuis"
+          ) ||
+          text.includes(
+            "Your home"
+          )
+        ) {
+
+          span.textContent =
+            language === "en"
+              ? "🏠 Your home"
+              : language === "es"
+                ? "🏠 Su domicilio"
+                : "🏠 Bij u thuis";
+
+        }
+
+
+        if (
+          text.includes(
+            "Salón"
+          ) ||
+          text.includes(
+            "Salon"
+          ) ||
+          text.includes(
+            "In de salon"
+          )
+        ) {
+
+          span.textContent =
+            language === "en"
+              ? "✨ Salon"
+              : language === "es"
+                ? "✨ Salón"
+                : "✨ In de salon";
+
+        }
+
+      }
+    );
+
+
+  /*
+     TABLE SERVICES
+  */
+
+  document
+    .querySelectorAll(
+      ".price-row span:first-child"
+    )
+    .forEach(
+      span => {
+
+        const original =
+          span.textContent.trim();
+
+
+        if (
+          serviceNameTranslations[
+            original
+          ]
+        ) {
+
+          span.textContent =
+            serviceNameTranslations[
+              original
+            ][language] ||
+            original;
+
+        }
+
+      }
+    );
+
+}
+
+
+/* =====================================================
+   WHATSAPP FORM
+===================================================== */
 
 const appointmentForm =
   document.getElementById(
@@ -1539,12 +2327,8 @@ if (appointmentForm) {
       event.preventDefault();
 
 
-      const language =
-        getLanguage();
-
-
       const t =
-        translations[language];
+        T[currentLanguage];
 
 
       const name =
@@ -1565,41 +2349,22 @@ if (appointmentForm) {
         )?.value.trim();
 
 
-      const locationRadio =
-        document.querySelector(
-          'input[name="location"]:checked'
-        );
+      const locationKey =
+        getLocationKey();
 
 
       const service =
         getSelectedService();
 
 
-      const problems =
-        getFootProblems();
-
-
-      const other =
-        document.getElementById(
-          "otherProblem"
-        )?.value.trim() || "";
-
-
-      const extra =
-        document.getElementById(
-          "message"
-        )?.value.trim() || "";
-
-
-      /* ---------------------------
-         VALIDACIÓN
-      --------------------------- */
-
+      /*
+         REQUIRED FIELDS
+      */
 
       if (
         !name ||
         !phone ||
-        !locationRadio ||
+        !locationKey ||
         !service
       ) {
 
@@ -1612,17 +2377,49 @@ if (appointmentForm) {
       }
 
 
-      if (
-        problems.length === 0
-      ) {
+      const problems =
+        getProblems();
 
-        alert(
-          t.alertProblem
-        );
 
-        return;
+      /*
+         FOOT PROBLEMS ONLY FOR FOOT SERVICES
+      */
+
+      if (isFootService()) {
+
+        if (
+          problems.length === 0
+        ) {
+
+          alert(
+
+            currentLanguage === "nl"
+
+              ? "Kies alstublieft 'Ik heb geen problemen met mijn voeten' als u geen voetproblemen heeft."
+
+              : currentLanguage === "en"
+
+                ? "Please select 'I have no problems with my feet' if you have no foot concerns."
+
+                : "Selecciona 'No tengo problemas en los pies' si no tienes ningún problema."
+
+          );
+
+          return;
+
+        }
 
       }
+
+
+      /*
+         OTHER
+      */
+
+      const other =
+        document.getElementById(
+          "otherProblem"
+        )?.value.trim() || "";
 
 
       if (
@@ -1641,26 +2438,9 @@ if (appointmentForm) {
       }
 
 
-      /* ---------------------------
-         UBICACIÓN
-      --------------------------- */
-
-      const location =
-        getLocationName(
-          locationRadio.dataset.priceColumn,
-          language
-        );
-
-
-      /* ---------------------------
-         PRECIOS
-      --------------------------- */
-
-      const locationKey =
-        locationRadio
-          .dataset
-          .priceColumn;
-
+      /*
+         BASE PRICE
+      */
 
       const basePrice =
         service.prices[
@@ -1668,66 +2448,121 @@ if (appointmentForm) {
         ];
 
 
-      /* ---------------------------
-         PROBLEMAS
-      --------------------------- */
+      /*
+         SURCHARGE
+      */
 
-      let problemText;
+      let surcharge =
+        "€0";
+
+
+      if (isFootService()) {
+
+        if (
+          problems.includes(
+            "Ik heb geen problemen met mijn voeten"
+          )
+        ) {
+
+          surcharge =
+            "€0";
+
+        } else {
+
+          surcharge =
+            currentLanguage === "nl"
+              ? "vanaf €20"
+              : currentLanguage === "en"
+                ? "from €20"
+                : "desde €20";
+
+        }
+
+      }
+
+
+      /*
+         PROBLEM TEXT
+      */
+
+      let problemText =
+        currentLanguage === "nl"
+          ? "Geen voetproblemen"
+          : currentLanguage === "en"
+            ? "No foot concerns"
+            : "Sin problemas en los pies";
 
 
       if (
-        problems.includes(
+        problems.length > 0 &&
+        !problems.includes(
           "Ik heb geen problemen met mijn voeten"
         )
       ) {
 
         problemText =
-          t.noFootProblems;
+          problems
+            .map(
+              problem => {
 
-      } else {
+                if (
+                  footProblems[
+                    problem
+                  ]
+                ) {
 
-        problemText =
-          translateProblems(
-            problems,
-            language
-          )
-          .join(", ");
+                  return footProblems[
+                    problem
+                  ][
+                    currentLanguage
+                  ];
+
+                }
+
+                return problem;
+
+              }
+            )
+            .join(", ");
 
       }
 
 
-      /* ---------------------------
-         SUPLEMENTO
-      --------------------------- */
+      if (other) {
 
-      const hasProblem =
-        !problems.includes(
-          "Ik heb geen problemen met mijn voeten"
+        problemText +=
+          " — " +
+          other;
+
+      }
+
+
+      /*
+         SERVICE
+      */
+
+      const serviceName =
+        service[
+          currentLanguage
+        ];
+
+
+      /*
+         LOCATION
+      */
+
+      const locationName =
+        getLocationName(
+          locationKey,
+          currentLanguage
         );
 
 
-      const surcharge =
-        hasProblem
-          ? t.from
-          : t.noSurcharge;
+      /*
+         WHATSAPP MESSAGE
+      */
 
-
-      /* ---------------------------
-         SERVICIO
-      --------------------------- */
-
-      const serviceName =
-        service[language];
-
-
-      /* ---------------------------
-         WHATSAPP
-      --------------------------- */
-
-      let message = "";
-
-
-      message +=
+      let message =
         t.messageStart +
         "\n\n";
 
@@ -1771,7 +2606,7 @@ if (appointmentForm) {
         "📍 " +
         t.location +
         ": " +
-        location +
+        locationName +
         "\n";
 
 
@@ -1782,35 +2617,42 @@ if (appointmentForm) {
         formatPrice(
           basePrice
         ) +
-        "\n\n";
-
-
-      message +=
-        "🦶 " +
-        t.footProblems +
-        ": " +
-        problemText +
         "\n";
 
 
-      message +=
-        "➕ " +
-        t.surchargeMessage +
-        ": " +
-        surcharge +
-        "\n";
+      /*
+         FOOT INFORMATION
+         ONLY FOR FOOT SERVICES
+      */
 
-
-      if (other) {
+      if (isFootService()) {
 
         message +=
-          "📝 " +
-          t.otherProblem +
+          "🦶 " +
+          t.footProblems +
           ": " +
-          other +
+          problemText +
+          "\n";
+
+
+        message +=
+          "➕ " +
+          t.surcharge +
+          " " +
+          surcharge +
           "\n";
 
       }
+
+
+      /*
+         EXTRA MESSAGE
+      */
+
+      const extra =
+        document.getElementById(
+          "message"
+        )?.value.trim() || "";
 
 
       if (extra) {
@@ -1835,9 +2677,9 @@ if (appointmentForm) {
         t.thanks;
 
 
-      /* ---------------------------
-         ABRIR WHATSAPP
-      --------------------------- */
+      /*
+         OPEN WHATSAPP
+      */
 
       const whatsappURL =
         "https://wa.me/" +
@@ -1860,142 +2702,8 @@ if (appointmentForm) {
 
 
 /* =====================================================
-   TRADUCIR PROBLEMAS
-   ===================================================== */
-
-function translateProblems(
-  problems,
-  language
-) {
-
-  const dictionary = {
-
-    "Schimmelnagels": {
-      nl: "Schimmelnagels",
-      en: "Fungal nails",
-      es: "Hongos en las uñas"
-    },
-
-    "Verdikte nagels": {
-      nl: "Verdikte nagels",
-      en: "Thickened nails",
-      es: "Uñas engrosadas"
-    },
-
-    "Zwakke nagels": {
-      nl: "Zwakke nagels",
-      en: "Weak nails",
-      es: "Uñas débiles"
-    },
-
-    "Ingegroeide nagel": {
-      nl: "Ingegroeide nagel",
-      en: "Ingrown nail",
-      es: "Uña encarnada"
-    },
-
-    "Psoriasis aan de voeten": {
-      nl: "Psoriasis aan de voeten",
-      en: "Psoriasis on the feet",
-      es: "Psoriasis en los pies"
-    },
-
-    "Likdoorn": {
-      nl: "Likdoorn",
-      en: "Corn",
-      es: "Callo"
-    },
-
-    "Kloven / ragades": {
-      nl: "Kloven / ragades",
-      en: "Cracked skin / fissures",
-      es: "Grietas / fisuras"
-    },
-
-    "Voetpijn": {
-      nl: "Voetpijn",
-      en: "Foot pain",
-      es: "Dolor de pies"
-    },
-
-    "Andere": {
-      nl: "Andere",
-      en: "Other",
-      es: "Otro"
-    }
-
-  };
-
-
-  return problems.map(
-    problem => {
-
-      if (
-        dictionary[problem]
-      ) {
-
-        return dictionary[
-          problem
-        ][language];
-
-      }
-
-      return problem;
-
-    }
-  );
-
-}
-
-
-/* =====================================================
-   NOMBRE DE UBICACIÓN
-   ===================================================== */
-
-function getLocationName(
-  locationKey,
-  language
-) {
-
-  const names = {
-
-    home: {
-
-      nl: "Bij Susan thuis",
-      en: "At Susan's home",
-      es: "En casa de Susan"
-
-    },
-
-    domicilio: {
-
-      nl: "Bij u thuis",
-      en: "At your home",
-      es: "En su domicilio"
-
-    },
-
-    salon: {
-
-      nl: "In de salon",
-      en: "At the salon",
-      es: "En el salón"
-
-    }
-
-  };
-
-
-  return names[
-    locationKey
-  ][language];
-
-}
-
-
-/* =====================================================
-   DIRECT WHATSAPP
-   ===================================================== */
+   DIRECT WHATSAPP BUTTON
+===================================================== */
 
 const directWhatsapp =
   document.getElementById(
@@ -2013,13 +2721,13 @@ if (directWhatsapp) {
 
 
 /* =====================================================
-   INICIAR IDIOMA
-   ===================================================== */
+   LANGUAGE SELECTOR
+===================================================== */
 
 if (languageSelector) {
 
   languageSelector.value =
-    savedLanguage;
+    currentLanguage;
 
 
   languageSelector.addEventListener(
@@ -2037,14 +2745,9 @@ if (languageSelector) {
 
 
 /* =====================================================
-   INICIAR PÁGINA
-   ===================================================== */
+   INITIALIZE
+===================================================== */
 
 changeLanguage(
-  savedLanguage
+  currentLanguage
 );
-
-
-/* =====================================================
-   FIN
-   ===================================================== */
