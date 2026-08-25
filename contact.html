@@ -1,58 +1,97 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Contact & Afspraak | Sunamita Wellness</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <link rel="stylesheet" href="style.css">
+  <title>
+    Contact & Afspraak | Sunamita Wellness
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
 </head>
 
+
 <body>
+
 
 <header class="header">
 
   <div class="logo">
+
     <span>🌿</span>
 
     <div>
-      <h1>Sunamita Wellness</h1>
-      <p>Rust • Verzorging • Welzijn</p>
+
+      <h1>
+        Sunamita Wellness
+      </h1>
+
+      <p>
+        Rust • Verzorging • Welzijn
+      </p>
+
     </div>
+
   </div>
+
 
   <nav>
 
-    <a href="index.html"
-       data-nl="Home"
-       data-en="Home"
-       data-es="Inicio">
-       Home
+    <a
+      href="index.html"
+      data-nl="Home"
+      data-en="Home"
+      data-es="Inicio"
+    >
+      Home
     </a>
 
-    <a href="services.html"
-       data-nl="Behandelingen"
-       data-en="Services"
-       data-es="Servicios">
-       Behandelingen
+
+    <a
+      href="services.html"
+      data-nl="Behandelingen"
+      data-en="Services"
+      data-es="Servicios"
+    >
+      Behandelingen
     </a>
 
-    <a href="contact.html"
-       class="active"
-       data-nl="Contact & Afspraak"
-       data-en="Contact & Appointment"
-       data-es="Contacto y Cita">
-       Contact & Afspraak
+
+    <a
+      href="contact.html"
+      class="active"
+      data-nl="Contact & Afspraak"
+      data-en="Contact & Appointment"
+      data-es="Contacto y Cita"
+    >
+      Contact & Afspraak
     </a>
+
 
     <select id="languageSelector">
 
-      <option value="nl">🇳🇱 Nederlands</option>
+      <option value="nl">
+        🇳🇱 Nederlands
+      </option>
 
-      <option value="en">🇬🇧 English</option>
+      <option value="en">
+        🇬🇧 English
+      </option>
 
-      <option value="es">🇪🇸 Español</option>
+      <option value="es">
+        🇪🇸 Español
+      </option>
 
     </select>
 
@@ -61,104 +100,168 @@
 </header>
 
 
+
 <main>
+
 
 <section class="page-title">
 
-  <p>Sunamita Wellness</p>
+  <p>
+    Sunamita Wellness
+  </p>
 
-  <h2>Contact & Afspraak</h2>
+  <h2
+    data-nl="Contact & Afspraak"
+    data-en="Contact & Appointment"
+    data-es="Contacto y Cita"
+  >
+    Contact & Afspraak
+  </h2>
 
-  <span>
+  <span
+    data-nl="Vertel ons wat u nodig heeft."
+    data-en="Tell us what you need."
+    data-es="Cuéntanos qué necesitas."
+  >
     Vertel ons wat u nodig heeft.
   </span>
 
 </section>
 
 
+
 <section class="contact-section section">
+
 
 <div class="contact-intro">
 
-<h2>Maak eenvoudig een afspraak</h2>
+  <h2
+    data-nl="Maak eenvoudig een afspraak"
+    data-en="Make an appointment easily"
+    data-es="Solicita tu cita fácilmente"
+  >
+    Maak eenvoudig een afspraak
+  </h2>
 
-<p>
-Vul hieronder uw gegevens in. Uw aanvraag wordt daarna automatisch
-voorbereid in WhatsApp zodat u rechtstreeks contact kunt opnemen met Susan.
-</p>
+
+  <p
+    data-nl="Vul hieronder uw gegevens in. Uw aanvraag wordt daarna automatisch voorbereid in WhatsApp zodat u rechtstreeks contact kunt opnemen met Susan."
+    data-en="Fill in your details below. Your request will then be automatically prepared in WhatsApp so you can contact Susan directly."
+    data-es="Completa tus datos. Tu solicitud se preparará automáticamente en WhatsApp para que puedas contactar directamente con Susan."
+  >
+    Vul hieronder uw gegevens in. Uw aanvraag wordt daarna automatisch voorbereid in WhatsApp zodat u rechtstreeks contact kunt opnemen met Susan.
+  </p>
 
 </div>
+
 
 
 <form id="appointmentForm">
 
 
-<!-- NAAM -->
+
+<!-- NAME -->
 
 <div class="form-group">
 
-<label for="name">
-Naam *
+<label
+  for="name"
+  data-nl="Naam *"
+  data-en="Name *"
+  data-es="Nombre *"
+>
+  Naam *
 </label>
+
 
 <input
   type="text"
   id="name"
   name="name"
-  placeholder="Uw volledige naam"
   required
+  data-placeholder-nl="Uw volledige naam"
+  data-placeholder-en="Your full name"
+  data-placeholder-es="Tu nombre completo"
+  placeholder="Uw volledige naam"
 >
 
 </div>
 
 
-<!-- TELEFOON -->
+
+<!-- PHONE -->
 
 <div class="form-group">
 
-<label for="phone">
-Telefoonnummer *
+<label
+  for="phone"
+  data-nl="Telefoonnummer *"
+  data-en="Phone number *"
+  data-es="Número de teléfono *"
+>
+  Telefoonnummer *
 </label>
+
 
 <input
   type="tel"
   id="phone"
   name="phone"
-  placeholder="Uw telefoonnummer"
   required
+  data-placeholder-nl="Uw telefoonnummer"
+  data-placeholder-en="Your phone number"
+  data-placeholder-es="Tu número de teléfono"
+  placeholder="Uw telefoonnummer"
 >
 
 </div>
+
 
 
 <!-- EMAIL -->
 
 <div class="form-group">
 
-<label for="email">
-E-mail <span>(optioneel)</span>
+<label
+  for="email"
+  data-nl="E-mail (optioneel)"
+  data-en="Email (optional)"
+  data-es="Correo electrónico (opcional)"
+>
+  E-mail (optioneel)
 </label>
+
 
 <input
   type="email"
   id="email"
   name="email"
+  data-placeholder-nl="uw@email.nl"
+  data-placeholder-en="your@email.com"
+  data-placeholder-es="tu@email.com"
   placeholder="uw@email.nl"
 >
 
 </div>
 
 
-<!-- LOCATIE -->
+
+<!-- LOCATION -->
 
 <div class="form-group">
 
-<label>
-Waar wilt u de behandeling? *
+<label
+  data-nl="Waar wilt u de behandeling? *"
+  data-en="Where would you like the treatment? *"
+  data-es="¿Dónde desea realizar el tratamiento? *"
+>
+  Waar wilt u de behandeling? *
 </label>
 
 
+
 <div class="location-options">
+
 
 <label class="option-card">
 
@@ -172,21 +275,26 @@ Waar wilt u de behandeling? *
 
 <span>🏡</span>
 
+
 <strong
   data-nl="Bij Susan thuis"
   data-en="At Susan's home"
-  data-es="En casa de Susan">
+  data-es="En casa de Susan"
+>
   Bij Susan thuis
 </strong>
+
 
 <small
   data-nl="Behandeling bij Susan"
   data-en="Treatment at Susan's home"
-  data-es="Tratamiento en casa de Susan">
+  data-es="Tratamiento en casa de Susan"
+>
   Behandeling bij Susan
 </small>
 
 </label>
+
 
 
 <label class="option-card">
@@ -198,22 +306,29 @@ Waar wilt u de behandeling? *
   data-price-column="domicilio"
 >
 
+
 <span>🏠</span>
+
 
 <strong
   data-nl="Bij u thuis"
   data-en="At your home"
-  data-es="En su domicilio">
+  data-es="En su domicilio"
+>
   Bij u thuis
 </strong>
+
 
 <small
   data-nl="Susan komt bij u thuis"
   data-en="Susan comes to your home"
-  data-es="Susan va a su domicilio">
+  data-es="Susan va a su domicilio"
+>
   Susan komt bij u thuis
 </small>
+
 </label>
+
 
 
 <label class="option-card">
@@ -225,79 +340,141 @@ Waar wilt u de behandeling? *
   data-price-column="salon"
 >
 
+
 <span>✨</span>
+
 
 <strong
   data-nl="In de salon"
   data-en="At the salon"
-  data-es="En el salón">
+  data-es="En el salón"
+>
   In de salon
 </strong>
+
 
 <small
   data-nl="Behandeling in de salon"
   data-en="Treatment at the salon"
-  data-es="Tratamiento en el salón">
+  data-es="Tratamiento en el salón"
+>
   Behandeling in de salon
 </small>
+
 </label>
 
-</div>
 
 </div>
 
+</div>
 
-<!-- CATEGORIE -->
+
+
+<!-- CATEGORY -->
 
 <div class="form-group">
 
-<label for="category">
-Kies een categorie *
+<label
+  for="category"
+  data-nl="Kies een categorie *"
+  data-en="Choose a category *"
+  data-es="Elige una categoría *"
+>
+  Kies een categorie *
 </label>
 
-<select id="category" required>
 
-<option value="">
--- Kies een categorie --
+<select
+  id="category"
+  required
+>
+
+<option
+  value=""
+  data-nl="-- Kies een categorie --"
+  data-en="-- Choose a category --"
+  data-es="-- Elige una categoría --"
+>
+  -- Kies een categorie --
 </option>
 
-<option value="massage">
-💆 Massages
+
+<option
+  value="massage"
+  data-nl="💆 Massages"
+  data-en="💆 Massages"
+  data-es="💆 Masajes"
+>
+  💆 Massages
 </option>
 
-<option value="feet">
-🦶 Voetverzorging & Voettherapie
+
+<option
+  value="feet"
+  data-nl="🦶 Voetverzorging & Voettherapie"
+  data-en="🦶 Foot Care & Foot Therapy"
+  data-es="🦶 Cuidado y Terapia de Pies"
+>
+  🦶 Voetverzorging & Voettherapie
 </option>
 
-<option value="nails">
-💅 Nagelverzorging & Manicure
+
+<option
+  value="nails"
+  data-nl="💅 Nagelverzorging & Manicure"
+  data-en="💅 Nail Care & Manicure"
+  data-es="💅 Cuidado de Uñas y Manicura"
+>
+  💅 Nagelverzorging & Manicure
 </option>
 
-<option value="spa">
-🌿 Spa Pedicure
+
+<option
+  value="spa"
+  data-nl="🌿 Spa Pedicure"
+  data-en="🌿 Spa Pedicure"
+  data-es="🌿 Spa Pedicura"
+>
+  🌿 Spa Pedicure
 </option>
 
-<option value="reflex">
-🌸 Voetreflexologie & Lymfatische massage
+
+<option
+  value="reflex"
+  data-nl="🌸 Voetreflexologie & Lymfatische massage"
+  data-en="🌸 Foot Reflexology & Lymphatic Massage"
+  data-es="🌸 Reflexología Podal y Masaje Linfático"
+>
+  🌸 Voetreflexologie & Lymfatische massage
 </option>
 
 </select>
 
 </div>
+
 
 
 <!-- SERVICE -->
 
 <div class="form-group">
 
-<label for="service">
-Kies uw behandeling *
+<label
+  for="service"
+  data-nl="Kies uw behandeling *"
+  data-en="Choose your treatment *"
+  data-es="Elige tu tratamiento *"
+>
+  Kies uw behandeling *
 </label>
 
-<select id="service" required>
+
+<select
+  id="service"
+  required
+>
 
 <option value="">
--- Kies eerst een categorie --
+  -- Kies eerst een categorie --
 </option>
 
 </select>
@@ -305,65 +482,218 @@ Kies uw behandeling *
 </div>
 
 
-<!-- PROBLEMEN -->
 
-<div class="form-group" id="footProblemGroup" style="display:none;">
+<!-- FOOT PROBLEMS -->
 
-<label>
-Heeft u problemen met uw voeten?
+<div
+  class="form-group"
+  id="footProblemGroup"
+  style="display:none;"
+>
+
+
+<label
+  data-nl="Heeft u problemen met uw voeten?"
+  data-en="Do you have any foot concerns?"
+  data-es="¿Tiene algún problema en los pies?"
+>
+  Heeft u problemen met uw voeten?
 </label>
 
-<p class="help-text">
-U kunt meerdere opties selecteren.
+
+<p
+  class="help-text"
+  data-nl="U kunt meerdere opties selecteren."
+  data-en="You can select more than one option."
+  data-es="Puede seleccionar varias opciones."
+>
+  U kunt meerdere opties selecteren.
 </p>
+
 
 
 <div class="problem-options">
 
-<label>
-<input type="checkbox" name="problem" value="Schimmelnagels">
-Schimmelnagels
-</label>
 
 <label>
-<input type="checkbox" name="problem" value="Verdikte nagels">
-Verdikte nagels
+
+<input
+  type="checkbox"
+  name="problem"
+  value="Schimmelnagels"
+>
+
+<span
+  data-nl="Schimmelnagels"
+  data-en="Fungal nails"
+  data-es="Hongos en las uñas"
+>
+  Schimmelnagels
+</span>
+
 </label>
 
-<label>
-<input type="checkbox" name="problem" value="Zwakke nagels">
-Zwakke nagels
-</label>
+
 
 <label>
-<input type="checkbox" name="problem" value="Ingegroeide nagel">
-Ingegroeide nagel
+
+<input
+  type="checkbox"
+  name="problem"
+  value="Verdikte nagels"
+>
+
+<span
+  data-nl="Verdikte nagels"
+  data-en="Thickened nails"
+  data-es="Uñas engrosadas"
+>
+  Verdikte nagels
+</span>
+
 </label>
 
-<label>
-<input type="checkbox" name="problem" value="Psoriasis aan de voeten">
-Psoriasis aan de voeten
-</label>
+
 
 <label>
-<input type="checkbox" name="problem" value="Likdoorn">
-Likdoorn
+
+<input
+  type="checkbox"
+  name="problem"
+  value="Zwakke nagels"
+>
+
+<span
+  data-nl="Zwakke nagels"
+  data-en="Weak nails"
+  data-es="Uñas débiles"
+>
+  Zwakke nagels
+</span>
+
 </label>
 
-<label>
-<input type="checkbox" name="problem" value="Kloven / ragades">
-Kloven / ragades
-</label>
+
 
 <label>
-<input type="checkbox" name="problem" value="Voetpijn">
-Voetpijn
+
+<input
+  type="checkbox"
+  name="problem"
+  value="Ingegroeide nagel"
+>
+
+<span
+  data-nl="Ingegroeide nagel"
+  data-en="Ingrown nail"
+  data-es="Uña encarnada"
+>
+  Ingegroeide nagel
+</span>
+
 </label>
 
+
+
 <label>
-<input type="checkbox" name="problem" value="Andere">
-Andere
+
+<input
+  type="checkbox"
+  name="problem"
+  value="Psoriasis aan de voeten"
+>
+
+<span
+  data-nl="Psoriasis aan de voeten"
+  data-en="Psoriasis on the feet"
+  data-es="Psoriasis en los pies"
+>
+  Psoriasis aan de voeten
+</span>
+
 </label>
+
+
+
+<label>
+
+<input
+  type="checkbox"
+  name="problem"
+  value="Likdoorn"
+>
+
+<span
+  data-nl="Likdoorn"
+  data-en="Corn"
+  data-es="Callo"
+>
+  Likdoorn
+</span>
+
+</label>
+
+
+
+<label>
+
+<input
+  type="checkbox"
+  name="problem"
+  value="Kloven / ragades"
+>
+
+<span
+  data-nl="Kloven / ragades"
+  data-en="Cracked skin / fissures"
+  data-es="Grietas / fisuras"
+>
+  Kloven / ragades
+</span>
+
+</label>
+
+
+
+<label>
+
+<input
+  type="checkbox"
+  name="problem"
+  value="Voetpijn"
+>
+
+<span
+  data-nl="Voetpijn"
+  data-en="Foot pain"
+  data-es="Dolor de pies"
+>
+  Voetpijn
+</span>
+
+</label>
+
+
+
+<label>
+
+<input
+  type="checkbox"
+  name="problem"
+  value="Andere"
+>
+
+<span
+  data-nl="Andere"
+  data-en="Other"
+  data-es="Otro"
+>
+  Andere
+</span>
+
+</label>
+
+
 
 <label class="no-problem">
 
@@ -374,18 +704,25 @@ Andere
   value="Ik heb geen problemen met mijn voeten"
 >
 
-<strong>
-Ik heb geen problemen met mijn voeten
+
+<strong
+  data-nl="Ik heb geen problemen met mijn voeten"
+  data-en="I have no problems with my feet"
+  data-es="No tengo problemas en los pies"
+>
+  Ik heb geen problemen met mijn voeten
 </strong>
 
 </label>
 
-</div>
 
 </div>
 
+</div>
 
-<!-- ANDERE -->
+
+
+<!-- OTHER PROBLEM -->
 
 <div
   class="form-group"
@@ -393,64 +730,127 @@ Ik heb geen problemen met mijn voeten
   style="display:none;"
 >
 
-<label for="otherProblem">
-Beschrijf uw probleem *
+<label
+  for="otherProblem"
+  data-nl="Beschrijf uw probleem *"
+  data-en="Describe your concern *"
+  data-es="Describe su problema *"
+>
+  Beschrijf uw probleem *
 </label>
+
 
 <textarea
   id="otherProblem"
   rows="4"
+  data-placeholder-nl="Beschrijf hier wat u ervaart..."
+  data-placeholder-en="Please describe your concern here..."
+  data-placeholder-es="Describe aquí lo que está experimentando..."
   placeholder="Beschrijf hier wat u ervaart..."
 ></textarea>
 
 </div>
 
 
-<!-- OPMERKING -->
+
+<!-- EXTRA MESSAGE -->
 
 <div class="form-group">
 
-<label for="message">
-Extra informatie <span>(optioneel)</span>
+<label
+  for="message"
+  data-nl="Extra informatie (optioneel)"
+  data-en="Additional information (optional)"
+  data-es="Información adicional (opcional)"
+>
+  Extra informatie (optioneel)
 </label>
+
 
 <textarea
   id="message"
   rows="4"
+  data-placeholder-nl="Heeft u nog iets dat u wilt vertellen?"
+  data-placeholder-en="Is there anything else you would like to tell us?"
+  data-placeholder-es="¿Hay algo más que quiera contarnos?"
   placeholder="Heeft u nog iets dat u wilt vertellen?"
 ></textarea>
 
 </div>
 
 
-<!-- PRIJS -->
 
-<div class="price-preview" id="pricePreview" style="display:none;">
+<!-- PRICE -->
 
-  <h3>💶 Indicatie van de prijs</h3>
+<div
+  class="price-preview"
+  id="pricePreview"
+  style="display:none;"
+>
 
-  <p>
-    <strong>Basisprijs:</strong>
-    <span id="basePrice">€0</span>
-  </p>
+<h3
+  data-nl="💶 Indicatie van de prijs"
+  data-en="💶 Estimated price"
+  data-es="💶 Precio estimado"
+>
+  💶 Indicatie van de prijs
+</h3>
 
-  <p>
-    <span id="surchargeText">
-      Toeslag:
-    </span>
-    <strong id="surchargeAmount">€0</strong>
-  </p>
 
-  <p class="price-note">
-    De definitieve prijs wordt vooraf door Susan bevestigd.
-  </p>
+<p>
+
+<strong
+  data-nl="Basisprijs:"
+  data-en="Base price:"
+  data-es="Precio base:"
+>
+  Basisprijs:
+</strong>
+
+<span id="basePrice">
+  €0
+</span>
+
+</p>
+
+
+<p>
+
+<span id="surchargeText"
+  data-nl="Toeslag:"
+  data-en="Additional charge:"
+  data-es="Suplemento:"
+>
+  Toeslag:
+</span>
+
+<strong id="surchargeAmount">
+  €0
+</strong>
+
+</p>
+
+
+<p
+  class="price-note"
+  data-nl="De definitieve prijs wordt vooraf door Susan bevestigd."
+  data-en="The final price will be confirmed by Susan in advance."
+  data-es="Susan confirmará el precio final antes de la cita."
+>
+  De definitieve prijs wordt vooraf door Susan bevestigd.
+</p>
+
 
 </div>
+
 
 
 <button
   type="submit"
   class="button whatsapp-button"
+  data-nl="💬 WhatsApp – Afspraak aanvragen"
+  data-en="💬 WhatsApp – Request an appointment"
+  data-es="💬 WhatsApp – Solicitar una cita"
 >
   💬 WhatsApp – Afspraak aanvragen
 </button>
@@ -461,39 +861,65 @@ Extra informatie <span>(optioneel)</span>
 </section>
 
 
+
 <section class="contact-info section">
 
-<h2>Direct contact</h2>
+<h2
+  data-nl="Direct contact"
+  data-en="Direct contact"
+  data-es="Contacto directo"
+>
+  Direct contact
+</h2>
 
-<p>
-Heeft u liever eerst een vraag? Neem rechtstreeks contact op met Susan.
+
+<p
+  data-nl="Heeft u liever eerst een vraag? Neem rechtstreeks contact op met Susan."
+  data-en="Would you like to ask a question first? Contact Susan directly."
+  data-es="¿Prefiere hacer una pregunta primero? Contacte directamente con Susan."
+>
+  Heeft u liever eerst een vraag? Neem rechtstreeks contact op met Susan.
 </p>
+
 
 <a
   href="#"
   id="directWhatsapp"
   class="button secondary"
+  data-nl="💬 WhatsApp"
+  data-en="💬 WhatsApp"
+  data-es="💬 WhatsApp"
 >
-💬 WhatsApp
+  💬 WhatsApp
 </a>
 
 </section>
 
+
 </main>
+
 
 
 <footer>
 
-<h3>Sunamita Wellness</h3>
+<h3>
+  Sunamita Wellness
+</h3>
 
-<p>Rust • Verzorging • Welzijn</p>
+<p>
+  Rust • Verzorging • Welzijn
+</p>
 
-<p>© 2026 Sunamita Wellness</p>
+<p>
+  © 2026 Sunamita Wellness
+</p>
 
 </footer>
+
 
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
