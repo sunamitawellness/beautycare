@@ -307,10 +307,10 @@ Kies uw behandeling *
 
 <!-- PROBLEMEN -->
 
-<div class="form-group">
+<div class="form-group" id="footProblemGroup" style="display:none;">
 
 <label>
-Heeft u problemen met uw voeten? *
+Heeft u problemen met uw voeten?
 </label>
 
 <p class="help-text">
@@ -425,27 +425,25 @@ Extra informatie <span>(optioneel)</span>
 
 <!-- PRIJS -->
 
-<div
-  id="pricePreview"
-  class="price-preview"
-  style="display:none;"
->
+<div class="price-preview" id="pricePreview" style="display:none;">
 
-<h3>💶 Indicatie van de prijs</h3>
+  <h3>💶 Indicatie van de prijs</h3>
 
-<p>
-Basisprijs:
-<strong id="basePrice">€0</strong>
-</p>
+  <p>
+    <strong>Basisprijs:</strong>
+    <span id="basePrice">€0</span>
+  </p>
 
-<p>
-Toeslag bij specifieke voetproblemen:
-<strong>vanaf €20</strong>
-</p>
+  <p>
+    <span id="surchargeText">
+      Toeslag:
+    </span>
+    <strong id="surchargeAmount">€0</strong>
+  </p>
 
-<p class="price-note">
-De definitieve prijs wordt vooraf door Susan bevestigd.
-</p>
+  <p class="price-note">
+    De definitieve prijs wordt vooraf door Susan bevestigd.
+  </p>
 
 </div>
 
