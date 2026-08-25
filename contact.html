@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact & Afspraak | Sunamita Wellness</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+  <div class="logo">
+    <span>🌿</span>
+
+    <div>
+      <h1>Sunamita Wellness</h1>
+      <p>Rust • Verzorging • Welzijn</p>
+    </div>
+  </div>
+
+  <nav>
+
+    <a href="index.html"
+       data-nl="Home"
+       data-en="Home"
+       data-es="Inicio">
+       Home
+    </a>
+
+    <a href="services.html"
+       data-nl="Behandelingen"
+       data-en="Services"
+       data-es="Servicios">
+       Behandelingen
+    </a>
+
+    <a href="contact.html"
+       class="active"
+       data-nl="Contact & Afspraak"
+       data-en="Contact & Appointment"
+       data-es="Contacto y Cita">
+       Contact & Afspraak
+    </a>
+
+    <select id="languageSelector">
+
+      <option value="nl">🇳🇱 Nederlands</option>
+
+      <option value="en">🇬🇧 English</option>
+
+      <option value="es">🇪🇸 Español</option>
+
+    </select>
+
+  </nav>
+
+</header>
+
+
+<main>
+
+<section class="page-title">
+
+  <p>Sunamita Wellness</p>
+
+  <h2>Contact & Afspraak</h2>
+
+  <span>
+    Vertel ons wat u nodig heeft.
+  </span>
+
+</section>
+
+
+<section class="contact-section section">
+
+<div class="contact-intro">
+
+<h2>Maak eenvoudig een afspraak</h2>
+
+<p>
+Vul hieronder uw gegevens in. Uw aanvraag wordt daarna automatisch
+voorbereid in WhatsApp zodat u rechtstreeks contact kunt opnemen met Susan.
+</p>
+
+</div>
+
+
+<form id="appointmentForm">
+
+
+<!-- NAAM -->
+
+<div class="form-group">
+
+<label for="name">
+Naam *
+</label>
+
+<input
+  type="text"
+  id="name"
+  name="name"
+  placeholder="Uw volledige naam"
+  required
+>
+
+</div>
+
+
+<!-- TELEFOON -->
+
+<div class="form-group">
+
+<label for="phone">
+Telefoonnummer *
+</label>
+
+<input
+  type="tel"
+  id="phone"
+  name="phone"
+  placeholder="Uw telefoonnummer"
+  required
+>
+
+</div>
+
+
+<!-- EMAIL -->
+
+<div class="form-group">
+
+<label for="email">
+E-mail <span>(optioneel)</span>
+</label>
+
+<input
+  type="email"
+  id="email"
+  name="email"
+  placeholder="uw@email.nl"
+>
+
+</div>
+
+
+<!-- LOCATIE -->
+
+<div class="form-group">
+
+<label>
+Waar wilt u de behandeling? *
+</label>
+
+
+<div class="location-options">
+
+<label class="option-card">
+
+<input
+  type="radio"
+  name="location"
+  value="Casa Suzan"
+  data-price-column="home"
+  required
+>
+
+<span>🏡</span>
+
+<strong>Casa Suzan</strong>
+
+<small>Behandeling bij Susan</small>
+
+</label>
+
+
+<label class="option-card">
+
+<input
+  type="radio"
+  name="location"
+  value="Aan huis / Domicilio"
+  data-price-column="domicilio"
+>
+
+<span>🏠</span>
+
+<strong>Aan huis</strong>
+
+<small>Susan komt bij u thuis</small>
+
+</label>
+
+
+<label class="option-card">
+
+<input
+  type="radio"
+  name="location"
+  value="Salon"
+  data-price-column="salon"
+>
+
+<span>✨</span>
+
+<strong>Salon</strong>
+
+<small>Behandeling in de salon</small>
+
+</label>
+
+</div>
+
+</div>
+
+
+<!-- CATEGORIE -->
+
+<div class="form-group">
+
+<label for="category">
+Kies een categorie *
+</label>
+
+<select id="category" required>
+
+<option value="">
+-- Kies een categorie --
+</option>
+
+<option value="massage">
+💆 Massages
+</option>
+
+<option value="feet">
+🦶 Voetverzorging & Voettherapie
+</option>
+
+<option value="nails">
+💅 Nagelverzorging & Manicure
+</option>
+
+<option value="spa">
+🌿 Spa Pedicure
+</option>
+
+<option value="reflex">
+🌸 Voetreflexologie & Lymfatische massage
+</option>
+
+</select>
+
+</div>
+
+
+<!-- SERVICE -->
+
+<div class="form-group">
+
+<label for="service">
+Kies uw behandeling *
+</label>
+
+<select id="service" required>
+
+<option value="">
+-- Kies eerst een categorie --
+</option>
+
+</select>
+
+</div>
+
+
+<!-- PROBLEMEN -->
+
+<div class="form-group">
+
+<label>
+Heeft u problemen met uw voeten? *
+</label>
+
+<p class="help-text">
+U kunt meerdere opties selecteren.
+</p>
+
+
+<div class="problem-options">
+
+<label>
+<input type="checkbox" name="problem" value="Schimmelnagels">
+Schimmelnagels
+</label>
+
+<label>
+<input type="checkbox" name="problem" value="Verdikte nagels">
+Verdikte nagels
+</label>
+
+<label>
+<input type="checkbox" name="problem" value="Zwakke nagels">
+Zwakke nagels
+</label>
+
+<label>
+<input type="checkbox" name="problem" value="Ingegroeide nagel">
+Ingegroeide nagel
+</label>
+
+<label>
+<input type="checkbox" name="problem" value="Psoriasis aan de voeten">
+Psoriasis aan de voeten
+</label>
+
+<label>
+<input type="checkbox" name="problem" value="Likdoorn">
+Likdoorn
+</label>
+
+<label>
+<input type="checkbox" name="problem" value="Kloven / ragades">
+Kloven / ragades
+</label>
+
+<label>
+<input type="checkbox" name="problem" value="Voetpijn">
+Voetpijn
+</label>
+
+<label>
+<input type="checkbox" name="problem" value="Andere">
+Andere
+</label>
+
+<label class="no-problem">
+
+<input
+  type="checkbox"
+  id="noProblem"
+  name="problem"
+  value="Ik heb geen problemen met mijn voeten"
+>
+
+<strong>
+Ik heb geen problemen met mijn voeten
+</strong>
+
+</label>
+
+</div>
+
+</div>
+
+
+<!-- ANDERE -->
+
+<div
+  class="form-group"
+  id="otherProblemContainer"
+  style="display:none;"
+>
+
+<label for="otherProblem">
+Beschrijf uw probleem *
+</label>
+
+<textarea
+  id="otherProblem"
+  rows="4"
+  placeholder="Beschrijf hier wat u ervaart..."
+></textarea>
+
+</div>
+
+
+<!-- OPMERKING -->
+
+<div class="form-group">
+
+<label for="message">
+Extra informatie <span>(optioneel)</span>
+</label>
+
+<textarea
+  id="message"
+  rows="4"
+  placeholder="Heeft u nog iets dat u wilt vertellen?"
+></textarea>
+
+</div>
+
+
+<!-- PRIJS -->
+
+<div
+  id="pricePreview"
+  class="price-preview"
+  style="display:none;"
+>
+
+<h3>💶 Indicatie van de prijs</h3>
+
+<p>
+Basisprijs:
+<strong id="basePrice">€0</strong>
+</p>
+
+<p>
+Toeslag bij specifieke voetproblemen:
+<strong>vanaf €20</strong>
+</p>
+
+<p class="price-note">
+De definitieve prijs wordt vooraf door Susan bevestigd.
+</p>
+
+</div>
+
+
+<button
+  type="submit"
+  class="button whatsapp-button"
+>
+  💬 WhatsApp – Afspraak aanvragen
+</button>
+
+
+</form>
+
+</section>
+
+
+<section class="contact-info section">
+
+<h2>Direct contact</h2>
+
+<p>
+Heeft u liever eerst een vraag? Neem rechtstreeks contact op met Susan.
+</p>
+
+<a
+  href="#"
+  id="directWhatsapp"
+  class="button secondary"
+>
+💬 WhatsApp
+</a>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<h3>Sunamita Wellness</h3>
+
+<p>Rust • Verzorging • Welzijn</p>
+
+<p>© 2026 Sunamita Wellness</p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
