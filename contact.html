@@ -2,103 +2,64 @@
 <html lang="nl">
 
 <head>
-
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <title>Contact & Afspraak | Sunamita Wellness</title>
 
-  <title>
-    Contact & Afspraak | Sunamita Wellness
-  </title>
-
-  <link
-    rel="stylesheet"
-    href="style.css"
-  >
-
+  <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
-
 
 <header class="header">
 
   <div class="logo">
-
     <span>🌿</span>
 
     <div>
+      <h1>Sunamita Wellness</h1>
 
-      <h1>
-        Sunamita Wellness
-      </h1>
+      <p>Rust • Verzorging • Welzijn</p>
 
-      <p>
-        Rust • Verzorging • Welzijn
+      <p
+        data-nl="Herwin je vertrouwen • Zorg • Balans"
+        data-en="Regain your confidence • Care • Balance"
+        data-es="Recupera tu confianza • Cuidado • Equilibrio"
+      >
+        Herwin je vertrouwen • Zorg • Balans
       </p>
-<p
-  data-nl="Herwin je vertrouwen • Zorg • Balans"
-  data-en="Regain your confidence • Care • Balance"
-  data-es="Recupera tu confianza • Cuidado • Equilibrio"
->
-  Herwin je vertrouwen • Zorg • Balans
-</p>
     </div>
-
   </div>
-
 
   <nav>
 
-    <a
-      href="index.html"
-      data-nl="Home"
-      data-en="Home"
-      data-es="Inicio"
-    >
+    <a href="index.html"
+       data-nl="Home"
+       data-en="Home"
+       data-es="Inicio">
       Home
     </a>
 
-
-    <a
-      href="services.html"
-      data-nl="Behandelingen"
-      data-en="Services"
-      data-es="Servicios"
-    >
+    <a href="services.html"
+       data-nl="Behandelingen"
+       data-en="Services"
+       data-es="Servicios">
       Behandelingen
     </a>
 
-
-    <a
-      href="contact.html"
-      class="active"
-      data-nl="Contact & Afspraak"
-      data-en="Contact & Appointment"
-      data-es="Contacto y Cita"
-    >
+    <a href="contact.html"
+       class="active"
+       data-nl="Contact & Afspraak"
+       data-en="Contact & Appointment"
+       data-es="Contacto y Cita">
       Contact & Afspraak
     </a>
 
-
     <select id="languageSelector">
-
-      <option value="nl">
-        🇳🇱 Nederlands
-      </option>
-
-      <option value="en">
-        🇬🇧 English
-      </option>
-
-      <option value="es">
-        🇪🇸 Español
-      </option>
-
+      <option value="nl">🇳🇱 Nederlands</option>
+      <option value="en">🇬🇧 English</option>
+      <option value="es">🇪🇸 Español</option>
     </select>
 
   </nav>
@@ -106,15 +67,11 @@
 </header>
 
 
-
 <main>
-
 
 <section class="page-title">
 
-  <p>
-    Sunamita Wellness
-  </p>
+  <p>Sunamita Wellness</p>
 
   <h2
     data-nl="Contact & Afspraak"
@@ -135,9 +92,7 @@
 </section>
 
 
-
 <section class="contact-section section">
-
 
 <div class="contact-intro">
 
@@ -149,21 +104,105 @@
     Maak eenvoudig een afspraak
   </h2>
 
-
   <p
-    data-nl="Vul hieronder uw gegevens in. Uw aanvraag wordt daarna automatisch voorbereid in WhatsApp zodat u rechtstreeks contact kunt opnemen met Susan."
-    data-en="Fill in your details below. Your request will then be automatically prepared in WhatsApp so you can contact Susan directly."
-    data-es="Completa tus datos. Tu solicitud se preparará automáticamente en WhatsApp para que puedas contactar directamente con Susan."
+    data-nl="Kies eerst hoe u wilt reserveren. Daarna ziet u alleen de informatie die voor uw reservering nodig is."
+    data-en="First choose how you would like to book. You will then see only the information needed for your appointment."
+    data-es="Primero elige cómo deseas reservar. Después verás solamente la información necesaria para tu cita."
   >
-    Vul hieronder uw gegevens in. Uw aanvraag wordt daarna automatisch voorbereid in WhatsApp zodat u rechtstreeks contact kunt opnemen met Susan.
+    Kies eerst hoe u wilt reserveren. Daarna ziet u alleen de informatie die voor uw reservering nodig is.
   </p>
 
 </div>
 
 
-
 <form id="appointmentForm">
 
+
+<!-- =====================================================
+     BOOKING TYPE
+===================================================== -->
+
+<div class="form-group booking-type-group">
+
+<label
+  data-nl="📅 Hoe wilt u reserveren? *"
+  data-en="📅 How would you like to book? *"
+  data-es="📅 ¿Cómo desea reservar? *"
+>
+  📅 Hoe wilt u reserveren? *
+</label>
+
+<div class="booking-type-options">
+
+  <label class="booking-type-card">
+
+    <input
+      type="radio"
+      name="bookingType"
+      value="normal"
+      required
+      checked
+    >
+
+    <span class="booking-type-icon">🟢</span>
+
+    <strong
+      data-nl="Normale afspraak"
+      data-en="Regular appointment"
+      data-es="Cita normal"
+    >
+      Normale afspraak
+    </strong>
+
+    <small
+      data-nl="Reserveer rechtstreeks bij Sunamita Wellness."
+      data-en="Book directly with Sunamita Wellness."
+      data-es="Reserva directamente con Sunamita Wellness."
+    >
+      Reserveer rechtstreeks bij Sunamita Wellness.
+    </small>
+
+  </label>
+
+
+  <label class="booking-type-card social-deal-card">
+
+    <input
+      type="radio"
+      name="bookingType"
+      value="social"
+    >
+
+    <span class="booking-type-icon">🎟️</span>
+
+    <strong
+      data-nl="Social Deal voucher"
+      data-en="Social Deal voucher"
+      data-es="Voucher de Social Deal"
+    >
+      Social Deal voucher
+    </strong>
+
+    <small
+      data-nl="Ik heb een voucher van Social Deal gekocht."
+      data-en="I have purchased a Social Deal voucher."
+      data-es="He comprado un voucher de Social Deal."
+    >
+      Ik heb een voucher van Social Deal gekocht.
+    </small>
+
+  </label>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     NORMAL BOOKING
+===================================================== -->
+
+<div id="normalBooking">
 
 
 <!-- NAME -->
@@ -179,7 +218,6 @@
   Naam *
 </label>
 
-
 <input
   type="text"
   id="name"
@@ -187,12 +225,11 @@
   required
   data-placeholder-nl="Uw volledige naam"
   data-placeholder-en="Your full name"
-  data-placeholder-es="Tu nombre completo"
+  data-placeholder-es="Su nombre completo"
   placeholder="Uw volledige naam"
 >
 
 </div>
-
 
 
 <!-- PHONE -->
@@ -208,7 +245,6 @@
   Telefoonnummer *
 </label>
 
-
 <input
   type="tel"
   id="phone"
@@ -216,12 +252,11 @@
   required
   data-placeholder-nl="Uw telefoonnummer"
   data-placeholder-en="Your phone number"
-  data-placeholder-es="Tu número de teléfono"
+  data-placeholder-es="Su número de teléfono"
   placeholder="Uw telefoonnummer"
 >
 
 </div>
-
 
 
 <!-- EMAIL -->
@@ -237,19 +272,17 @@
   E-mail (optioneel)
 </label>
 
-
 <input
   type="email"
   id="email"
   name="email"
   data-placeholder-nl="uw@email.nl"
   data-placeholder-en="your@email.com"
-  data-placeholder-es="tu@email.com"
+  data-placeholder-es="su@email.com"
   placeholder="uw@email.nl"
 >
 
 </div>
-
 
 
 <!-- LOCATION -->
@@ -264,10 +297,7 @@
   Waar wilt u de behandeling? *
 </label>
 
-
-
 <div class="location-options">
-
 
 <label class="option-card">
 
@@ -281,7 +311,6 @@
 
 <span>🏡</span>
 
-
 <strong
   data-nl="Bij Susan thuis"
   data-en="At Susan's home"
@@ -289,7 +318,6 @@
 >
   Bij Susan thuis
 </strong>
-
 
 <small
   data-nl="Behandeling bij Susan"
@@ -302,7 +330,6 @@
 </label>
 
 
-
 <label class="option-card">
 
 <input
@@ -312,9 +339,7 @@
   data-price-column="domicilio"
 >
 
-
 <span>🏠</span>
-
 
 <strong
   data-nl="Bij u thuis"
@@ -323,7 +348,6 @@
 >
   Bij u thuis
 </strong>
-
 
 <small
   data-nl="Susan komt bij u thuis"
@@ -336,7 +360,6 @@
 </label>
 
 
-
 <label class="option-card">
 
 <input
@@ -346,9 +369,7 @@
   data-price-column="salon"
 >
 
-
 <span>✨</span>
-
 
 <strong
   data-nl="In de salon"
@@ -357,7 +378,6 @@
 >
   In de salon
 </strong>
-
 
 <small
   data-nl="Behandeling in de salon"
@@ -369,11 +389,9 @@
 
 </label>
 
-
 </div>
 
 </div>
-
 
 
 <!-- CATEGORY -->
@@ -389,11 +407,7 @@
   Kies een categorie *
 </label>
 
-
-<select
-  id="category"
-  required
->
+<select id="category" required>
 
 <option
   value=""
@@ -404,7 +418,6 @@
   -- Kies een categorie --
 </option>
 
-
 <option
   value="massage"
   data-nl="💆 Massages"
@@ -413,7 +426,6 @@
 >
   💆 Massages
 </option>
-
 
 <option
   value="feet"
@@ -424,7 +436,6 @@
   🦶 Voetverzorging & Voettherapie
 </option>
 
-
 <option
   value="nails"
   data-nl="💅 Nagelverzorging & Manicure"
@@ -434,7 +445,6 @@
   💅 Nagelverzorging & Manicure
 </option>
 
-
 <option
   value="spa"
   data-nl="🌿 Spa Pedicure"
@@ -443,7 +453,6 @@
 >
   🌿 Spa Pedicure
 </option>
-
 
 <option
   value="reflex"
@@ -459,7 +468,6 @@
 </div>
 
 
-
 <!-- SERVICE -->
 
 <div class="form-group">
@@ -473,11 +481,7 @@
   Kies uw behandeling *
 </label>
 
-
-<select
-  id="service"
-  required
->
+<select id="service" required>
 
 <option value="">
   -- Kies eerst een categorie --
@@ -488,7 +492,6 @@
 </div>
 
 
-
 <!-- FOOT PROBLEMS -->
 
 <div
@@ -497,7 +500,6 @@
   style="display:none;"
 >
 
-
 <label
   data-nl="Heeft u problemen met uw voeten?"
   data-en="Do you have any foot concerns?"
@@ -505,7 +507,6 @@
 >
   Heeft u problemen met uw voeten?
 </label>
-
 
 <p
   class="help-text"
@@ -516,190 +517,106 @@
   U kunt meerdere opties selecteren.
 </p>
 
-
-
 <div class="problem-options">
 
-
 <label>
-
-<input
-  type="checkbox"
-  name="problem"
-  value="Schimmelnagels"
->
-
+<input type="checkbox" name="problem" value="Schimmelnagels">
 <span
   data-nl="Schimmelnagels"
   data-en="Fungal nails"
   data-es="Hongos en las uñas"
 >
-  Schimmelnagels
+Schimmelnagels
 </span>
-
 </label>
 
-
-
 <label>
-
-<input
-  type="checkbox"
-  name="problem"
-  value="Verdikte nagels"
->
-
+<input type="checkbox" name="problem" value="Verdikte nagels">
 <span
   data-nl="Verdikte nagels"
   data-en="Thickened nails"
   data-es="Uñas engrosadas"
 >
-  Verdikte nagels
+Verdikte nagels
 </span>
-
 </label>
 
-
-
 <label>
-
-<input
-  type="checkbox"
-  name="problem"
-  value="Zwakke nagels"
->
-
+<input type="checkbox" name="problem" value="Zwakke nagels">
 <span
   data-nl="Zwakke nagels"
   data-en="Weak nails"
   data-es="Uñas débiles"
 >
-  Zwakke nagels
+Zwakke nagels
 </span>
-
 </label>
 
-
-
 <label>
-
-<input
-  type="checkbox"
-  name="problem"
-  value="Ingegroeide nagel"
->
-
+<input type="checkbox" name="problem" value="Ingegroeide nagel">
 <span
   data-nl="Ingegroeide nagel"
   data-en="Ingrown nail"
   data-es="Uña encarnada"
 >
-  Ingegroeide nagel
+Ingegroeide nagel
 </span>
-
 </label>
 
-
-
 <label>
-
-<input
-  type="checkbox"
-  name="problem"
-  value="Psoriasis aan de voeten"
->
-
+<input type="checkbox" name="problem" value="Psoriasis aan de voeten">
 <span
   data-nl="Psoriasis aan de voeten"
   data-en="Psoriasis on the feet"
   data-es="Psoriasis en los pies"
 >
-  Psoriasis aan de voeten
+Psoriasis aan de voeten
 </span>
-
 </label>
 
-
-
 <label>
-
-<input
-  type="checkbox"
-  name="problem"
-  value="Likdoorn"
->
-
+<input type="checkbox" name="problem" value="Likdoorn">
 <span
   data-nl="Likdoorn"
   data-en="Corn"
   data-es="Callo"
 >
-  Likdoorn
+Likdoorn
 </span>
-
 </label>
 
-
-
 <label>
-
-<input
-  type="checkbox"
-  name="problem"
-  value="Kloven / ragades"
->
-
+<input type="checkbox" name="problem" value="Kloven / ragades">
 <span
   data-nl="Kloven / ragades"
   data-en="Cracked skin / fissures"
   data-es="Grietas / fisuras"
 >
-  Kloven / ragades
+Kloven / ragades
 </span>
-
 </label>
 
-
-
 <label>
-
-<input
-  type="checkbox"
-  name="problem"
-  value="Voetpijn"
->
-
+<input type="checkbox" name="problem" value="Voetpijn">
 <span
   data-nl="Voetpijn"
   data-en="Foot pain"
   data-es="Dolor de pies"
 >
-  Voetpijn
+Voetpijn
 </span>
-
 </label>
 
-
-
 <label>
-
-<input
-  type="checkbox"
-  name="problem"
-  value="Andere"
->
-
+<input type="checkbox" name="problem" value="Andere">
 <span
   data-nl="Andere"
   data-en="Other"
   data-es="Otro"
 >
-  Andere
+Andere
 </span>
-
 </label>
-
-
 
 <label class="no-problem">
 
@@ -709,7 +626,6 @@
   name="problem"
   value="Ik heb geen problemen met mijn voeten"
 >
-
 
 <strong
   data-nl="Ik heb geen problemen met mijn voeten"
@@ -721,11 +637,9 @@
 
 </label>
 
-
 </div>
 
 </div>
-
 
 
 <!-- OTHER PROBLEM -->
@@ -740,23 +654,21 @@
   for="otherProblem"
   data-nl="Beschrijf uw probleem *"
   data-en="Describe your concern *"
-  data-es="Describe su problema *"
+  data-es="Describa su problema *"
 >
   Beschrijf uw probleem *
 </label>
-
 
 <textarea
   id="otherProblem"
   rows="4"
   data-placeholder-nl="Beschrijf hier wat u ervaart..."
   data-placeholder-en="Please describe your concern here..."
-  data-placeholder-es="Describe aquí lo que está experimentando..."
+  data-placeholder-es="Describa aquí lo que está experimentando..."
   placeholder="Beschrijf hier wat u ervaart..."
 ></textarea>
 
 </div>
-
 
 
 <!-- EXTRA MESSAGE -->
@@ -772,7 +684,6 @@
   Extra informatie (optioneel)
 </label>
 
-
 <textarea
   id="message"
   rows="4"
@@ -783,7 +694,6 @@
 ></textarea>
 
 </div>
-
 
 
 <!-- PRICE -->
@@ -802,7 +712,6 @@
   💶 Indicatie van de prijs
 </h3>
 
-
 <p>
 
 <strong
@@ -813,16 +722,14 @@
   Basisprijs:
 </strong>
 
-<span id="basePrice">
-  €0
-</span>
+<span id="basePrice">€0</span>
 
 </p>
 
-
 <p>
 
-<span id="surchargeText"
+<span
+  id="surchargeText"
   data-nl="Toeslag:"
   data-en="Additional charge:"
   data-es="Suplemento:"
@@ -830,12 +737,9 @@
   Toeslag:
 </span>
 
-<strong id="surchargeAmount">
-  €0
-</strong>
+<strong id="surchargeAmount">€0</strong>
 
 </p>
-
 
 <p
   class="price-note"
@@ -846,10 +750,277 @@
   De definitieve prijs wordt vooraf door Susan bevestigd.
 </p>
 
+</div>
 
 </div>
 
 
+<!-- =====================================================
+     SOCIAL DEAL BOOKING
+===================================================== -->
+
+<div
+  id="socialBooking"
+  style="display:none;"
+>
+
+
+<div class="social-deal-info">
+
+  <div class="social-deal-icon">🎟️</div>
+
+  <h3
+    data-nl="Social Deal voucher"
+    data-en="Social Deal voucher"
+    data-es="Voucher de Social Deal"
+  >
+    Social Deal voucher
+  </h3>
+
+  <p
+    data-nl="Deze afspraak vindt plaats bij Susan thuis."
+    data-en="This appointment takes place at Susan's home."
+    data-es="Esta cita se realiza en casa de Susan."
+  >
+    Deze afspraak vindt plaats bij Susan thuis.
+  </p>
+
+  <strong>
+    📍 Marktweg 79, 2525 JB
+  </strong>
+
+</div>
+
+
+<!-- SOCIAL NAME -->
+
+<div class="form-group">
+
+<label
+  for="socialName"
+  data-nl="Naam *"
+  data-en="Name *"
+  data-es="Nombre *"
+>
+  Naam *
+</label>
+
+<input
+  type="text"
+  id="socialName"
+  data-placeholder-nl="Uw volledige naam"
+  data-placeholder-en="Your full name"
+  data-placeholder-es="Su nombre completo"
+  placeholder="Uw volledige naam"
+>
+
+</div>
+
+
+<!-- SOCIAL PHONE -->
+
+<div class="form-group">
+
+<label
+  for="socialPhone"
+  data-nl="Telefoonnummer *"
+  data-en="Phone number *"
+  data-es="Número de teléfono *"
+>
+  Telefoonnummer *
+</label>
+
+<input
+  type="tel"
+  id="socialPhone"
+  data-placeholder-nl="Uw telefoonnummer"
+  data-placeholder-en="Your phone number"
+  data-placeholder-es="Su número de teléfono"
+  placeholder="Uw telefoonnummer"
+>
+
+</div>
+
+
+<!-- SOCIAL EMAIL -->
+
+<div class="form-group">
+
+<label
+  for="socialEmail"
+  data-nl="E-mail (optioneel)"
+  data-en="Email (optional)"
+  data-es="Correo electrónico (opcional)"
+>
+  E-mail (optioneel)
+</label>
+
+<input
+  type="email"
+  id="socialEmail"
+  data-placeholder-nl="uw@email.nl"
+  data-placeholder-en="your@email.com"
+  data-placeholder-es="su@email.com"
+  placeholder="uw@email.nl"
+>
+
+</div>
+
+
+<!-- SOCIAL SERVICE -->
+
+<div class="form-group">
+
+<label
+  for="socialService"
+  data-nl="Welk Social Deal voucher heeft u gekocht? *"
+  data-en="Which Social Deal voucher did you purchase? *"
+  data-es="¿Qué voucher de Social Deal compraste? *"
+>
+  Welk Social Deal voucher heeft u gekocht? *
+</label>
+
+<select id="socialService">
+
+<option
+  value=""
+  data-nl="-- Kies uw voucher --"
+  data-en="-- Choose your voucher --"
+  data-es="-- Elige tu voucher --"
+>
+  -- Kies uw voucher --
+</option>
+
+<option
+  value="Pedicure"
+  data-nl="🦶 Pedicure"
+  data-en="🦶 Pedicure"
+  data-es="🦶 Pedicura"
+>
+  🦶 Pedicure
+</option>
+
+<option
+  value="Pedicure + gellak"
+  data-nl="🦶 Pedicure + gellak"
+  data-en="🦶 Pedicure + gel polish"
+  data-es="🦶 Pedicura + esmalte gel"
+>
+  🦶 Pedicure + gellak
+</option>
+
+<option
+  value="Manicure"
+  data-nl="💅 Manicure"
+  data-en="💅 Manicure"
+  data-es="💅 Manicura"
+>
+  💅 Manicure
+</option>
+
+<option
+  value="Manicure + gellak"
+  data-nl="💅 Manicure + gellak"
+  data-en="💅 Manicure + gel polish"
+  data-es="💅 Manicura + esmalte gel"
+>
+  💅 Manicure + gellak
+</option>
+
+<option
+  value="Lichaamsmassage"
+  data-nl="💆 Lichaamsmassage"
+  data-en="💆 Body massage"
+  data-es="💆 Masaje corporal"
+>
+  💆 Lichaamsmassage
+</option>
+
+<option
+  value="Hoofdmassage"
+  data-nl="💆 Hoofdmassage"
+  data-en="💆 Head massage"
+  data-es="💆 Masaje de cabeza"
+>
+  💆 Hoofdmassage
+</option>
+
+<option
+  value="Gezichtsmassage"
+  data-nl="💆 Gezichtsmassage"
+  data-en="💆 Facial massage"
+  data-es="💆 Masaje facial"
+>
+  💆 Gezichtsmassage
+</option>
+
+<option
+  value="Voetreflexologie"
+  data-nl="🌸 Voetreflexologie"
+  data-en="🌸 Foot reflexology"
+  data-es="🌸 Reflexología podal"
+>
+  🌸 Voetreflexologie
+</option>
+
+</select>
+
+</div>
+
+
+<!-- VOUCHER CODE -->
+
+<div class="form-group">
+
+<label
+  for="voucherCode"
+  data-nl="Social Deal voucher code (optioneel)"
+  data-en="Social Deal voucher code (optional)"
+  data-es="Código del voucher de Social Deal (opcional)"
+>
+  Social Deal voucher code (optioneel)
+</label>
+
+<input
+  type="text"
+  id="voucherCode"
+  data-placeholder-nl="Uw voucher code"
+  data-placeholder-en="Your voucher code"
+  data-placeholder-es="Tu código de voucher"
+  placeholder="Uw voucher code"
+>
+
+</div>
+
+
+<!-- SOCIAL MESSAGE -->
+
+<div class="form-group">
+
+<label
+  for="socialMessage"
+  data-nl="Extra informatie (optioneel)"
+  data-en="Additional information (optional)"
+  data-es="Información adicional (opcional)"
+>
+  Extra informatie (optioneel)
+</label>
+
+<textarea
+  id="socialMessage"
+  rows="4"
+  data-placeholder-nl="Heeft u nog iets dat u wilt vertellen?"
+  data-placeholder-en="Is there anything else you would like to tell us?"
+  data-placeholder-es="¿Hay algo más que quiera contarnos?"
+  placeholder="Heeft u nog iets dat u wilt vertellen?"
+></textarea>
+
+</div>
+
+</div>
+
+
+<!-- SUBMIT -->
 
 <button
   type="submit"
@@ -861,11 +1032,9 @@
   💬 WhatsApp – Afspraak aanvragen
 </button>
 
-
 </form>
 
 </section>
-
 
 
 <section class="contact-info section">
@@ -878,7 +1047,6 @@
   Direct contact
 </h2>
 
-
 <p
   data-nl="Heeft u liever eerst een vraag? Neem rechtstreeks contact op met Susan."
   data-en="Would you like to ask a question first? Contact Susan directly."
@@ -886,7 +1054,6 @@
 >
   Heeft u liever eerst een vraag? Neem rechtstreeks contact op met Susan.
 </p>
-
 
 <a
   href="#"
@@ -901,31 +1068,29 @@
 
 </section>
 
-
 </main>
-
 
 
 <footer>
 
-<h3>
-  Sunamita Wellness
-</h3>
+<h3>Sunamita Wellness</h3>
 
-<p>
-  Rust • Verzorging • Welzijn
+<p>Rust • Verzorging • Welzijn</p>
+
+<p
+  data-nl="Herwin je vertrouwen • Zorg • Balans"
+  data-en="Regain your confidence • Care • Balance"
+  data-es="Recupera tu confianza • Cuidado • Equilibrio"
+>
+  Herwin je vertrouwen • Zorg • Balans
 </p>
 
-<p>
-  © 2026 Sunamita Wellness
-</p>
+<p>© 2026 Sunamita Wellness</p>
 
 </footer>
-
 
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
