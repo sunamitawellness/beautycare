@@ -2059,3 +2059,36 @@ textarea:focus-visible {
     font-size: 13px;
   }
 }
+
+.opening-hours {
+  max-width: 480px;
+  margin: 30px auto;
+  padding: 24px;
+  background: #f4efe5;
+  border: 1px solid #d9c7b8;
+  border-radius: 16px;
+  color: #3f403d;
+  text-align: center;
+}
+
+.opening-hours h2 {
+  color: #5f765c;
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-family: Georgia, serif;
+}
+
+.opening-hours p {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  .opening-hours {
+    margin: 20px 12px;
+    padding: 18px;
+  }
+}
