@@ -1,4 +1,86 @@
-  border-radius: 16px;
+
+/* RESTAURAR COLORES DE SUNAMITA WELLNESS */
+
+:root {
+  --primary: #7b9278;
+  --primary-dark: #5f765c;
+  --primary-light: #eef3eb;
+  --secondary: #d9c7b8;
+  --cream: #f8f5f0;
+  --cream-dark: #eee8df;
+  --white: #ffffff;
+  --text: #3f403d;
+  --muted: #777872;
+  --border: #e5dfd7;
+}
+
+html {
+  background: #f8f5f0;
+}
+
+body {
+  background: #f8f5f0;
+  color: #3f403d;
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header {
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.05);
+}
+
+nav a {
+  color: #3f403d;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a.active {
+  color: #5f765c;
+}
+
+nav a.active::after {
+  background: #7b9278;
+}
+
+.button {
+  background: #5f765c;
+  color: #ffffff;
+  border-radius: 50px;
+}
+
+.button:hover {
+  background: #4e644c;
+}
+
+.price-header {
+  background: #5f765c;
+  color: #ffffff;
+}
+
+.price-table {
+  background: #ffffff;
+  border: 1px solid #e5dfd7;
+  border-radius: 18px;
+}
+
+.price-row:nth-child(even) {
+  background: #faf8f4;
+}
+
+footer {
+  background: #3f493d;
+  color: #ffffff;
+}
+
+
+border-radius: 16px;
   color: #3f403d;
   box-shadow: 0 6px 20px rgba(70, 70, 60, 0.06);
 }
