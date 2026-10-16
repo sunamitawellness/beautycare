@@ -3,7 +3,7 @@
    LANGUAGE + NORMAL BOOKING + SOCIAL DEAL + WHATSAPP
 ===================================================== */
 
-const WHATSAPP_NUMBER = "31640555065";
+const WHATSAPP_NUMBER = "31653983923";
 
 let currentLanguage =
   localStorage.getItem("sunamitaLanguage") || "nl";
@@ -391,13 +391,6 @@ const services = {
       en: "Manicure + gel polish",
       es: "Manicura + esmalte gel",
       prices: { home: 37.5, domicilio: 47.5, salon: 42.5 }
-    },
-
-    {
-      nl: "BIAB behandeling",
-      en: "BIAB treatment",
-      es: "Tratamiento BIAB",
-      prices: { home: 40, domicilio: 50, salon: 45 }
     },
 
     {
