@@ -254,56 +254,56 @@ const services = {
       nl: "Lichaamsmassage 30 min",
       en: "Body massage 30 min",
       es: "Masaje corporal 30 min",
-      prices: { home: 35, domicilio: 50, salon: 40 }
+      prices: { home: 35, domicilio: 50}
     },
 
     {
       nl: "Lichaamsmassage 60 min",
       en: "Body massage 60 min",
       es: "Masaje corporal 60 min",
-      prices: { home: 65, domicilio: 85, salon: 75 }
+      prices: { home: 65, domicilio: 85}
     },
 
     {
       nl: "Rug, schouders & nek 30 min",
       en: "Back, shoulders & neck 30 min",
       es: "Espalda, hombros y cuello 30 min",
-      prices: { home: 30, domicilio: 45, salon: 35 }
+      prices: { home: 30, domicilio: 45}
     },
 
     {
       nl: "Rug, schouders & nek 60 min",
       en: "Back, shoulders & neck 60 min",
       es: "Espalda, hombros y cuello 60 min",
-      prices: { home: 55, domicilio: 75, salon: 65 }
+      prices: { home: 55, domicilio: 75}
     },
 
     {
       nl: "Hoofd & gezichtsmassage 30 min",
       en: "Head & facial massage 30 min",
       es: "Masaje de cabeza y rostro 30 min",
-      prices: { home: 25, domicilio: 40, salon: 30 }
+      prices: { home: 25, domicilio: 40}
     },
 
     {
       nl: "Hoofd & gezichtsmassage 60 min",
       en: "Head & facial massage 60 min",
       es: "Masaje de cabeza y rostro 60 min",
-      prices: { home: 45, domicilio: 60, salon: 50 }
+      prices: { home: 45, domicilio: 60}
     },
 
     {
       nl: "Lymfatische massage 30 min",
       en: "Lymphatic massage 30 min",
       es: "Masaje linfático 30 min",
-      prices: { home: 40, domicilio: 55, salon: 45 }
+      prices: { home: 40, domicilio: 55}
     },
 
     {
       nl: "Lymfatische massage 60 min",
       en: "Lymphatic massage 60 min",
       es: "Masaje linfático 60 min",
-      prices: { home: 70, domicilio: 90, salon: 80 }
+      prices: { home: 70, domicilio: 90}
     }
 
   ],
@@ -315,63 +315,63 @@ const services = {
       nl: "Basis pedicure",
       en: "Basic pedicure",
       es: "Pedicura básica",
-      prices: { home: 35, domicilio: 45, salon: 40 }
+      prices: { home: 35, domicilio: 45}
     },
 
     {
       nl: "Pedicure + normale lak",
       en: "Pedicure + regular polish",
       es: "Pedicura + esmalte normal",
-      prices: { home: 40, domicilio: 50, salon: 45 }
+      prices: { home: 40, domicilio: 50}
     },
 
     {
       nl: "Pedicure + gellak",
       en: "Pedicure + gel polish",
       es: "Pedicura + esmalte gel",
-      prices: { home: 50, domicilio: 60, salon: 55 }
+      prices: { home: 50, domicilio: 60}
     },
 
     {
       nl: "Alleen nagels knippen & vijlen",
       en: "Nail trimming & filing only",
       es: "Solo cortar y limar uñas",
-      prices: { home: 22.5, domicilio: 32.5, salon: 27.5 }
+      prices: { home: 22.5, domicilio: 32.5}
     },
 
     {
       nl: "Schimmelnagelbehandeling",
       en: "Fungal nail treatment",
       es: "Tratamiento de hongos en las uñas",
-      prices: { home: 37.5, domicilio: 47.5, salon: 42.5 }
+      prices: { home: 37.5, domicilio: 47.5}
     },
 
     {
       nl: "Ingegroeide nagel",
       en: "Ingrown nail",
       es: "Uña encarnada",
-      prices: { home: 32.5, domicilio: 42.5, salon: 37.5 }
+      prices: { home: 32.5, domicilio: 42.5}
     },
 
     {
       nl: "Verdikte nagels",
       en: "Thickened nails",
       es: "Uñas engrosadas",
-      prices: { home: 37.5, domicilio: 47.5, salon: 42.5 }
+      prices: { home: 37.5, domicilio: 47.5}
     },
 
     {
       nl: "Likdoorn verwijderen",
       en: "Corn removal",
       es: "Eliminación de callo",
-      prices: { home: 27.5, domicilio: 37.5, salon: 32.5 }
+      prices: { home: 27.5, domicilio: 37.5}
     },
 
     {
       nl: "Kloven / ragades",
       en: "Cracked skin / fissures",
       es: "Grietas / fisuras",
-      prices: { home: 27.5, domicilio: 37.5, salon: 32.5 }
+      prices: { home: 27.5, domicilio: 37.5}
     }
 
   ],
@@ -383,22 +383,15 @@ const services = {
       nl: "Manicure + normale lak",
       en: "Manicure + regular polish",
       es: "Manicura + esmalte normal",
-      prices: { home: 27.5, domicilio: 37.5, salon: 32.5 }
+      prices: { home: 27.5, domicilio: 37.5}
     },
 
     {
       nl: "Manicure + gellak",
       en: "Manicure + gel polish",
       es: "Manicura + esmalte gel",
-      prices: { home: 37.5, domicilio: 47.5, salon: 42.5 }
+      prices: { home: 37.5, domicilio: 47.5}
     },
-
-    {
-      nl: "Dip Powder",
-      en: "Dip Powder",
-      es: "Dip Powder",
-      prices: { home: 55, domicilio: 65, salon: 60 }
-    }
 
   ],
 
@@ -409,21 +402,21 @@ const services = {
       nl: "Spa Pedicure All-in",
       en: "All-in Spa Pedicure",
       es: "Spa Pedicura All-in",
-      prices: { home: 60, domicilio: 70, salon: 65 }
+      prices: { home: 60, domicilio: 70}
     },
 
     {
       nl: "Spa Pedicure + normale lak",
       en: "Spa Pedicure + regular polish",
       es: "Spa Pedicura + esmalte normal",
-      prices: { home: 70, domicilio: 80, salon: 75 }
+      prices: { home: 70, domicilio: 80}
     },
 
     {
       nl: "Spa Pedicure + gellak",
       en: "Spa Pedicure + gel polish",
       es: "Spa Pedicura + esmalte gel",
-      prices: { home: 80, domicilio: 90, salon: 85 }
+      prices: { home: 80, domicilio: 90}
     }
 
   ],
@@ -435,14 +428,14 @@ const services = {
       nl: "Voetreflexologie 30 min",
       en: "Foot reflexology 30 min",
       es: "Reflexología podal 30 min",
-      prices: { home: 35, domicilio: 50, salon: 40 }
+      prices: { home: 35, domicilio: 50}
     },
 
     {
       nl: "Voetreflexologie 60 min",
       en: "Foot reflexology 60 min",
       es: "Reflexología podal 60 min",
-      prices: { home: 60, domicilio: 80, salon: 70 }
+      prices: { home: 60, domicilio: 80}
     }
 
   ]
@@ -1655,12 +1648,6 @@ if (appointmentForm) {
           nl: "Bij u thuis",
           en: "At your home",
           es: "En su domicilio"
-        },
-
-        salon: {
-          nl: "In de salon",
-          en: "At the salon",
-          es: "En el salón"
         }
 
       };
