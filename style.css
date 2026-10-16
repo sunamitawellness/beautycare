@@ -2059,3 +2059,160 @@ textarea:focus-visible {
     font-size: 13px;
   }
 }
+
+/* =========================================
+   OPENING HOURS / OPENINGSTIJDEN
+========================================= */
+
+.opening-hours {
+  width: 100%;
+  max-width: 480px;
+  margin: 30px auto;
+  padding: 24px;
+
+  background: #f4efe5;
+  border: 1px solid #d9c7b8;
+  border-radius: 16px;
+
+  color: #3f403d;
+  text-align: center;
+
+  box-shadow: 0 6px 20px rgba(70, 70, 60, 0.06);
+}
+
+.opening-hours h2 {
+  color: #5f765c;
+  margin: 0 0 18px;
+  font-family: Georgia, serif;
+  font-size: 28px;
+  line-height: 1.3;
+}
+
+.opening-hours p {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+
+  margin: 10px 0;
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.opening-hours p strong {
+  flex: 1;
+}
+
+.opening-hours p span {
+  white-space: nowrap;
+  text-align: right;
+}
+
+.opening-hours .closed {
+  color: #777872;
+  font-style: italic;
+}
+
+/* MOBIELE WEERGAVE */
+@media (max-width: 480px) {
+  .opening-hours {
+    width: auto;
+    margin: 20px 12px;
+    padding: 20px 16px;
+  }
+
+  .opening-hours h2 {
+    font-size: 24px;
+  }
+
+  .opening-hours p {
+    font-size: 14px;
+    gap: 8px;
+  }
+}
+
+/* =========================================
+   FIX SPA PEDICURE & VOETREFLEXOLOGIE
+========================================= */
+
+.service-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 45px;
+  padding: 0 16px;
+  overflow: visible;
+}
+
+.service-section h2 {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto 28px;
+  text-align: center;
+  line-height: 1.25;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.service-section .price-table {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.service-section .price-header,
+.service-section .price-row {
+  width: 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 18px 14px;
+  align-items: center;
+}
+
+.service-section .price-header span,
+.service-section .price-row span {
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.service-section .price-header span:first-child,
+.service-section .price-row span:first-child {
+  text-align: left;
+}
+
+.service-section .price-header span:not(:first-child),
+.service-section .price-row span:not(:first-child) {
+  text-align: center;
+}
+
+@media (max-width: 650px) {
+  .service-section {
+    margin-bottom: 35px;
+    padding: 0 12px;
+  }
+
+  .service-section h2 {
+    font-size: clamp(30px, 8vw, 42px);
+    margin-bottom: 22px;
+  }
+
+  .service-section .price-header,
+  .service-section .price-row {
+    grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, 0.8fr));
+    gap: 6px;
+    padding: 16px 10px;
+  }
+
+  .service-section .price-header span,
+  .service-section .price-row span {
+    font-size: 13px;
+  }
+}
+
