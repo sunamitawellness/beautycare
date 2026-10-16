@@ -2137,3 +2137,32 @@ textarea:focus-visible {
     font-size: 14px;
   }
 }
+/* FIX: SERVICE TABLES ON MOBILE */
+.price-row {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.price-row span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+@media (max-width: 650px) {
+  .price-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) repeat(2, minmax(60px, auto));
+    gap: 8px;
+    padding: 18px 12px;
+  }
+
+  .price-row span {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .price-row span:first-child {
+    text-align: left;
+  }
+}
